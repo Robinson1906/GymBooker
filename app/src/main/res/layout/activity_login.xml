@@ -10,21 +10,13 @@
         android:id="@+id/ivfondo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="151dp"
-        android:layout_marginTop="66dp"
-        android:layout_marginEnd="152dp"
-        android:layout_marginBottom="88dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.104"
-        app:srcCompat="@drawable/fondo"
 
-        
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/fondo" />
 
     <TextView
         android:id="@+id/tvlogin"
@@ -32,12 +24,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="177dp"
         android:layout_marginEnd="176dp"
-        android:fontFamily="sans-serif-smallcaps"
-        android:text="Iniciar Sesión"
 
-        android:textColor="#5A5654"
-        android:textSize="34sp"
-        android:textStyle="bold"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/iniciarsesion"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="@+id/ivfondo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.506"
@@ -45,52 +37,34 @@
         app:layout_constraintTop_toTopOf="@+id/ivfondo"
         app:layout_constraintVertical_bias="0.542" />
 
+
     <Button
         android:id="@+id/btnlogin"
         android:layout_width="133dp"
-        android:layout_height="39dp"
+        android:layout_height="48dp"
         android:background="#99FF9800"
-        android:text="Login"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/ingresar"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#0B0A0A"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edpassword"
-        app:layout_constraintVertical_bias="0.33" />
-
-<TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="172dp"
-        android:layout_marginBottom="48dp"
-        android:text="O registrese "
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-
-    <Button
-        android:id="@+id/btnregister"
-        android:layout_width="185dp"
-        android:layout_height="43dp"
-        android:background="#00FFFFFF"
-        android:fontFamily="serif"
-        android:text="O registrese aquí..."
-        android:textColor="#5E5A5A"
-        android:textSize="12sp"
-        tools:layout_editor_absoluteX="113dp"
-        tools:layout_editor_absoluteY="672dp" />
+        app:layout_constraintVertical_bias="0.232" />
 
     <EditText
         android:id="@+id/eduser"
         android:layout_width="214dp"
-        android:layout_height="43dp"
+        android:layout_height="48dp"
         android:layout_marginTop="34dp"
         android:background="@drawable/editext_shape"
         android:ems="10"
-        android:hint="Usuario"
+        android:hint="@string/user"
         android:inputType="textPersonName"
-        android:textAlignment="center"
+        android:paddingStart="15dp"
+        android:textAlignment="textStart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvlogin" />
@@ -98,14 +72,36 @@
     <EditText
         android:id="@+id/edpassword"
         android:layout_width="211dp"
-        android:layout_height="47dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/editext_shape"
         android:ems="10"
-        android:hint="Contraseña"
-        android:inputType="textPersonName"
+        android:hint="@string/pwd"
+        android:inputType="textPassword"
+        android:paddingStart="15dp"
+        android:textAlignment="textStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eduser"
+        android:autofillHints="" />
+
+    <TextView
+        android:id="@+id/editTextTextPersonName3"
+        android:layout_width="96dp"
+        android:layout_height="23dp"
+        android:layout_marginBottom="48dp"
+        android:autofillHints=""
+        android:fontFamily="@font/advent_pro_semibold"
+        android:singleLine="false"
+        android:text="@string/registrarse"
         android:textAlignment="center"
-        tools:layout_editor_absoluteX="101dp"
-        tools:layout_editor_absoluteY="524dp" />
+        android:textColor="@color/black"
+        android:textColorHighlight="#00B7FF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>
