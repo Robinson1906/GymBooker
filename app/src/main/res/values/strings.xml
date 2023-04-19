@@ -6,4 +6,9 @@
     <string name="hh">00:00</string>
     <string name="barra">-</string>
     <string name="Agendar">Agendar</string>
+    <string name="ingresar">Ingresar</string>
+    <string name="registrarse">Registrarse</string>
+    <string name="iniciarsesion">Iniciar Sesión</string>
+    <string name="pwd">Contraseña</string>
+    <string name="user">Usuario</string>
 </resources>
