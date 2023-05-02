@@ -24,7 +24,7 @@
         android:id="@+id/tvRegistro"
         android:layout_width="215dp"
         android:layout_height="74dp"
-        android:fontFamily="@font/andika"
+        android:fontFamily="sans-serif"
         android:text="Registro"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
