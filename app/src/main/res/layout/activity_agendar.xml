@@ -12,10 +12,10 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/fondo2" />
 
     <ImageView
@@ -62,7 +62,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="352dp"
-        android:fontFamily="@font/advent_pro_semibold"
+        android:fontFamily="sans-serif"
         android:text="@string/hora"
         android:textColor="@color/black"
         android:textSize="34sp"
@@ -76,7 +76,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="516dp"
-        android:fontFamily="@font/advent_pro_semibold"
+
         android:text="Rutina:"
         android:textColor="@color/black"
         android:textSize="34sp"
@@ -90,7 +90,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:fontFamily="@font/advent_pro_semibold"
+
         android:text="@string/barra"
         android:textColor="@color/black"
         android:textSize="34sp"
@@ -117,7 +117,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="216dp"
-        android:fontFamily="@font/advent_pro_semibold"
+
         android:text="@string/fecha"
         android:textColor="@color/black"
         android:textSize="34sp"
@@ -130,7 +130,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="128dp"
-        android:fontFamily="@font/advent_pro_semibold"
+
         android:text="Agenda tu entrenamiento"
         android:textColor="@color/black"
         android:textSize="34sp"

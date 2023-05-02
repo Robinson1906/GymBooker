@@ -91,7 +91,7 @@
         android:layout_height="23dp"
         android:layout_marginBottom="48dp"
         android:autofillHints=""
-        android:fontFamily="@font/advent_pro_semibold"
+        android:fontFamily="sans-serif"
         android:singleLine="false"
         android:text="@string/registrarse"
         android:textAlignment="center"
