@@ -42,7 +42,7 @@
         android:id="@+id/btnlogin"
         android:layout_width="133dp"
         android:layout_height="48dp"
-        android:background="#99FF9800"
+        android:background="@drawable/bordebotones"
         android:fontFamily="sans-serif-medium"
         android:text="@string/ingresar"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
