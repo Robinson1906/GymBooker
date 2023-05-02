@@ -11,4 +11,18 @@
     <string name="iniciarsesion">Iniciar Sesión</string>
     <string name="pwd">Contraseña</string>
     <string name="user">Usuario</string>
+    <string name="misentrenamientos">Mis Entrenamientos</string>
+    <string name="hisorial">Historial</string>
+    <string name="configuraciones">Configuraciones</string>
+    <string name="registro">Registro</string>
+    <string name="correo">Correo</string>
+    <string name="nombre">Nombre</string>
+    <string name="telefono">Telefono</string>
+    <string name="basico">Basico</string>
+    <string name="premium">Premium</string>
+    <string name="continuar">Continuar</string>
+    <string name="elija_un_plan">Elija un Plan</string>
+    <string name="rutina">Rutina:</string>
+    <string name="dd_mm_aaaa">dd/mm/aaaa</string>
+    <string name="agenda_tu_entrenamiento">Agenda tu entrenamiento</string>
 </resources>
