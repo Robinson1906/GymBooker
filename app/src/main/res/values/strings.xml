@@ -12,7 +12,7 @@
     <string name="pwd">Contraseña</string>
     <string name="user">Usuario</string>
     <string name="misentrenamientos">Mis Entrenamientos</string>
-    <string name="hisorial">Historial</string>
+    <string name="historial">Historial</string>
     <string name="configuraciones">Configuraciones</string>
     <string name="registro">Registro</string>
     <string name="correo">Correo</string>
@@ -25,5 +25,6 @@
     <string name="rutina">Rutina:</string>
     <string name="dd_mm_aaaa">dd/mm/aaaa</string>
     <string name="agenda_tu_entrenamiento">Agenda tu entrenamiento</string>
+    <string name="vacio" />
 
 </resources>
