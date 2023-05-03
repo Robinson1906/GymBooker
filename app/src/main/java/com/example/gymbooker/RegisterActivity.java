@@ -9,5 +9,15 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        Bundle b= getIntent().getExtras();
+        Boolean b1=b.getBoolean("admin");
+
+        if(b1){
+
+        }else{
+
+        }
+
     }
 }

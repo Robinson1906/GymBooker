@@ -11,13 +11,6 @@
     <string name="iniciarsesion">Iniciar Sesión</string>
     <string name="pwd">Contraseña</string>
     <string name="user">Usuario</string>
-
-    <string name="configuraciones">Configuraciones</string>
-    <string name="mis_entrenamientos">Mis Entrenamientos</string>
-    <string name="historial">Historial</string>
-    <string name="agendar">Agendar</string>
-    <string name="todo">TODO</string>
-
     <string name="misentrenamientos">Mis Entrenamientos</string>
     <string name="hisorial">Historial</string>
     <string name="configuraciones">Configuraciones</string>
