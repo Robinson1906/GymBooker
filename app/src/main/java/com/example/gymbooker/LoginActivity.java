@@ -1,8 +1,10 @@
 package com.example.gymbooker;
 
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,7 +12,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity{
+
 
     private EditText txtUser,txtPwd;
     private Button btnLogin;
@@ -20,6 +23,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_login);
 
         txtUser=findViewById(R.id.txtUser);
@@ -45,6 +49,7 @@ public class LoginActivity extends AppCompatActivity {
         }else {
             Toast.makeText(this, "Credenciales incorrectas", Toast.LENGTH_SHORT).show();
         }
+
     }
 
     public void clickRegistro(View view){
