@@ -1,12 +1,8 @@
 package com.example.gymbooker;
 
-
 import android.os.Bundle;
 
-public class AgendarActivity extends AppCompatActivity {
-
-    @Override
+public abstract class AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
     }
 }
