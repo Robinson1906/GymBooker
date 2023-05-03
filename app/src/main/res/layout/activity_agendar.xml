@@ -36,6 +36,7 @@
         android:layout_height="55dp"
         android:layout_marginTop="160dp"
         android:ems="10"
+        android:fontFamily="@font/kaushan_script"
         android:hint="@string/hh"
         android:inputType="date"
         android:textSize="20sp"
@@ -49,6 +50,7 @@
         android:layout_width="80dp"
         android:layout_height="55dp"
         android:ems="10"
+        android:fontFamily="@font/kaushan_script"
         android:hint="@string/hh"
         android:inputType="date"
         android:textSize="20sp"
@@ -62,7 +64,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="352dp"
-        android:fontFamily="sans-serif"
+        android:fontFamily="@font/kaushan_script"
         android:text="@string/hora"
         android:textColor="@color/black"
         android:textSize="34sp"
@@ -77,6 +79,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="516dp"
 
+        android:fontFamily="@font/kaushan_script"
         android:text="Rutina:"
         android:textColor="@color/black"
         android:textSize="34sp"
@@ -91,6 +94,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
 
+        android:fontFamily="@font/kaushan_script"
         android:text="@string/barra"
         android:textColor="@color/black"
         android:textSize="34sp"
@@ -104,8 +108,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:ems="10"
+        android:fontFamily="@font/kaushan_script"
         android:hint="@string/dd"
         android:inputType="date"
+        android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -118,6 +124,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="216dp"
 
+        android:fontFamily="@font/kaushan_script"
         android:text="@string/fecha"
         android:textColor="@color/black"
         android:textSize="34sp"
@@ -131,6 +138,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="128dp"
 
+        android:fontFamily="@font/kaushan_script"
         android:text="Agenda tu entrenamiento"
         android:textColor="@color/black"
         android:textSize="34sp"
@@ -140,14 +148,17 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="632dp"
+        android:layout_width="141dp"
+        android:layout_height="52dp"
+        android:fontFamily="@font/vampiro_one"
         android:text="@string/Agendar"
+        android:background="@drawable/general_button"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.9" />
 
     <EditText
         android:id="@+id/editTextTextPersonName4"
