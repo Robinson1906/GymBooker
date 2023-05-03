@@ -54,6 +54,7 @@ public class LoginActivity extends AppCompatActivity{
 
     public void clickRegistro(View view){
         Intent i = new Intent(LoginActivity.this, RegisterActivity.class);
+        i.putExtra("admin",true);
         startActivity(i);
     }
 }
