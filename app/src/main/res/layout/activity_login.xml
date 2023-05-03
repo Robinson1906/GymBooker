@@ -39,11 +39,13 @@
 
 
     <Button
-        android:id="@+id/btnlogin"
+        android:id="@+id/btnLogin"
         android:layout_width="133dp"
         android:layout_height="48dp"
+
         android:background="@drawable/general_button"
         android:fontFamily="@font/vampiro_one"
+
         android:text="@string/ingresar"
         android:textAppearance="@android:style/TextAppearance.Material.Large"
         android:textColor="#0B0A0A"
@@ -51,11 +53,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edpassword"
+        app:layout_constraintTop_toBottomOf="@+id/txtPwd"
         app:layout_constraintVertical_bias="0.232" />
 
     <EditText
-        android:id="@+id/eduser"
+        android:id="@+id/txtUser"
         android:layout_width="214dp"
         android:layout_height="48dp"
         android:layout_marginTop="34dp"
@@ -71,7 +73,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvlogin" />
 
     <EditText
-        android:id="@+id/edpassword"
+        android:id="@+id/txtPwd"
         android:layout_width="211dp"
         android:layout_height="48dp"
         android:layout_marginTop="32dp"
@@ -85,10 +87,14 @@
         android:textAlignment="textStart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+
         app:layout_constraintTop_toBottomOf="@+id/eduser" />
 
+        android:autofillHints="" />
+
+
     <TextView
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/txtRegistro"
         android:layout_width="96dp"
         android:layout_height="23dp"
         android:layout_marginBottom="48dp"
