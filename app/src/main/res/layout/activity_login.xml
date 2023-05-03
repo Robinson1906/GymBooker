@@ -42,8 +42,8 @@
         android:id="@+id/btnLogin"
         android:layout_width="133dp"
         android:layout_height="48dp"
-        android:background="@drawable/bordebotones"
         android:fontFamily="sans-serif-medium"
+        android:onClick="clickIniciar"
         android:text="@string/ingresar"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#0B0A0A"
@@ -87,11 +87,12 @@
 
     <TextView
         android:id="@+id/txtRegistro"
-        android:layout_width="96dp"
+        android:layout_width="wrap_content"
         android:layout_height="23dp"
         android:layout_marginBottom="48dp"
         android:autofillHints=""
         android:fontFamily="sans-serif"
+        android:onClick="clickRegistro"
         android:singleLine="false"
         android:text="@string/registrarse"
         android:textAlignment="center"

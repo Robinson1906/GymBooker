@@ -43,7 +43,12 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(i);
             finish();
         }else {
-            Toast.makeText(this, "Ole mano, credenciales incorrectas", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Credenciales incorrectas", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    public void clickRegistro(View view){
+        Intent i = new Intent(LoginActivity.this, RegisterActivity.class);
+        startActivity(i);
     }
 }
