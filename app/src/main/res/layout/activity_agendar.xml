@@ -152,10 +152,7 @@
         android:layout_width="141dp"
         android:layout_height="52dp"
         android:fontFamily="@font/vampiro_one"
-
         android:layout_marginTop="632dp"
-        android:background="@drawable/bordebotones"
-
         android:text="@string/Agendar"
         android:background="@drawable/general_button"
         app:layout_constraintBottom_toBottomOf="@+id/imageView2"
