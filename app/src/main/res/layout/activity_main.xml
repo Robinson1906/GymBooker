@@ -17,12 +17,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/fondo" />
+        app:srcCompat="@drawable/fondo"
+        android:contentDescription="@string/todo" />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="61dp"
         android:layout_height="44dp"
+        android:contentDescription="@string/todo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.02"
@@ -36,8 +38,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="60dp"
+
+        android:text="@string/configuraciones"
+
         android:background="@drawable/bordebotones"
-        android:text="Configuraciones"
+
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -47,8 +52,11 @@
         android:layout_width="160dp"
         android:layout_height="54dp"
         android:layout_marginTop="8dp"
+
+        android:text="@string/mis_entrenamientos"
+
         android:background="@drawable/bordebotones"
-        android:text="Mis Entrenamientos"
+        
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -61,8 +69,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+
+        android:text="@string/historial"
+
         android:background="@drawable/bordebotones"
-        android:text="Historial"
+
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -74,8 +85,8 @@
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/agendar"
         android:background="@drawable/bordebotones"
-        android:text="Agendar"
         android:textColor="#FD020202"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
