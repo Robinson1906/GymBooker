@@ -7,6 +7,16 @@
     tools:context=".ViewUser">
 
     <TextView
+        android:id="@+id/tvTokenUser"
+        android:layout_width="79dp"
+        android:layout_height="29dp"
+        android:layout_weight="1"
+        android:text="Token"
+        app:layout_constraintEnd_toStartOf="@+id/tvTokenExpire"
+        app:layout_constraintStart_toEndOf="@+id/txNameOfUser"
+        tools:layout_editor_absoluteY="20dp" />
+
+    <TextView
         android:id="@+id/tvTokenExpire"
         android:layout_width="75dp"
         android:layout_height="28dp"
@@ -15,16 +25,6 @@
         android:text="TokenExpire"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tvTokenUser"
-        tools:layout_editor_absoluteY="20dp" />
-
-    <TextView
-        android:id="@+id/tvTokenUser"
-        android:layout_width="79dp"
-        android:layout_height="29dp"
-        android:layout_weight="1"
-        android:text="Token"
-        app:layout_constraintEnd_toStartOf="@+id/tvTokenExpire"
-        app:layout_constraintStart_toEndOf="@+id/txNameOfUser"
         tools:layout_editor_absoluteY="20dp" />
 
     <TextView
