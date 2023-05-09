@@ -12,13 +12,13 @@
         android:theme="@style/Theme.GymBooker"
         tools:targetApi="31">
         <activity
-            android:name=".CustomAdapter"
+            android:name=".Reservas.CustomAdapter"
             android:exported="false" />
         <activity
-            android:name=".RecyclerMisReservas"
+            android:name=".Reservas.RecyclerMisReservas"
             android:exported="false" />
         <activity
-            android:name=".Reserva"
+            android:name=".Reservas.Reserva"
             android:exported="false" />
         <activity
             android:name=".GoogleActivity"
