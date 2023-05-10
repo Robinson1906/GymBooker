@@ -26,5 +26,6 @@
     <string name="dd_mm_aaaa">dd/mm/aaaa</string>
     <string name="agenda_tu_entrenamiento">Agenda tu entrenamiento</string>
     <string name="vacio" />
+    <string name="mis_reservas">MIS RESERVAS</string>
 
 </resources>
