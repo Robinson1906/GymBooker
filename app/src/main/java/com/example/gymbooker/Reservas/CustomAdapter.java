@@ -6,11 +6,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
 import com.example.gymbooker.R;
 
 import java.util.ArrayList;
@@ -68,7 +66,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         public void link(Reserva myres){
             tv_fecha.setText(myres.getFecha());
             tv_hora.setText(myres.getHoraIngreso() + "/" + myres.getHoraSalida());
-            tv_duracion.setText(myres.getDuracion());
+            tv_duracion.setText(Integer.toString(myres.getDuracion()));
             tv_rutina.setText(myres.getRutina());
 
 
