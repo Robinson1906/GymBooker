@@ -1,13 +1,15 @@
-package com.example.gymbooker;
+package com.example.gymbooker.Recyclers;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class CheckUsers extends AppCompatActivity {
+import com.example.gymbooker.R;
+
+public class UsersActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_check_users);
+        setContentView(R.layout.activity_users);
     }
 }

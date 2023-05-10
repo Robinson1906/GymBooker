@@ -12,10 +12,7 @@
         android:theme="@style/Theme.GymBooker"
         tools:targetApi="31">
         <activity
-            android:name=".ViewUser"
-            android:exported="false" />
-        <activity
-            android:name=".CheckUsers"
+            android:name=".Recyclers.UsersActivity"
             android:exported="false" />
         <activity
             android:name=".GoogleActivity"

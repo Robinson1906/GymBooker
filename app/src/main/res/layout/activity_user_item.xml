@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ViewUser">
+    android:layout_height="70dp"
+    >
 
     <TextView
         android:id="@+id/tvTokenUser"
@@ -14,7 +14,7 @@
         android:text="Token"
         app:layout_constraintEnd_toStartOf="@+id/tvTokenExpire"
         app:layout_constraintStart_toEndOf="@+id/txNameOfUser"
-        tools:layout_editor_absoluteY="20dp" />
+        app:layout_constraintTop_toTopOf="@+id/txNameOfUser" />
 
     <TextView
         android:id="@+id/tvTokenExpire"
@@ -25,17 +25,18 @@
         android:text="TokenExpire"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tvTokenUser"
-        tools:layout_editor_absoluteY="20dp" />
+        app:layout_constraintTop_toTopOf="@+id/tvTokenUser" />
 
     <TextView
         android:id="@+id/txNameOfUser"
         android:layout_width="150dp"
         android:layout_height="29dp"
         android:layout_marginStart="25dp"
+        android:layout_marginTop="20dp"
         android:layout_weight="1"
         android:text="Name"
         app:layout_constraintEnd_toStartOf="@+id/tvTokenUser"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="20dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
