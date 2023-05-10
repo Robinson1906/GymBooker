@@ -54,6 +54,38 @@
         app:layout_constraintTop_toBottomOf="@+id/tvRegistro" />
 
     <EditText
+        android:id="@+id/editTextTextPersonName3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="288dp"
+        android:ems="10"
+        android:fontFamily="@font/kaushan_script"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="Cedula"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRegistro" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="364dp"
+        android:ems="10"
+        android:fontFamily="@font/kaushan_script"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="Fecha de nacimiento"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRegistro" />
+
+    <EditText
         android:id="@+id/editTextTextPersonName2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -89,15 +121,18 @@
         android:id="@+id/button3"
         android:layout_width="163dp"
         android:layout_height="55dp"
-        android:background="@drawable/general_button"
-        android:fontFamily="@font/vampiro_one"
 
+        android:layout_marginBottom="76dp"
+
+        android:background="@drawable/general_button"
+
+        android:fontFamily="@font/vampiro_one"
         android:text="Continuar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonNam
 
 
 </android.support.constraint.ConstraintLayout>
