@@ -16,7 +16,7 @@
 
 
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/fondo" />
+        app:srcCompat="@color/white" />
 
     <TextView
         android:id="@+id/tvlogin"
