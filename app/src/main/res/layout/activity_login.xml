@@ -81,7 +81,7 @@
         android:background="@drawable/editext_shape"
         android:ems="10"
         android:fontFamily="@font/kaushan_script"
-        android:hint="@string/pwd"
+        android:hint="Codigo"
         android:inputType="textPassword"
         android:paddingStart="15dp"
 
