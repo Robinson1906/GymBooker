@@ -48,9 +48,13 @@ public class ReservasActivity extends AppCompatActivity {
     public void LoadData(){
         Reserva res1 = new Reserva("02/05/23","Espalda",1600,1800);
         Reserva res2 = new Reserva("08/05/23","Abdomen",900,1100);
+        Reserva res3 = new Reserva("08/05/23","Abdomen",900,1100);
 
         ListaReservas = new ArrayList<>();
         ListaReservas.add(res1);
         ListaReservas.add(res2);
+        ListaReservas.add(res3);
     }
+
+    public void mandarAHistorial(){}
 }
