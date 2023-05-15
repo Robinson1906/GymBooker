@@ -1,4 +1,4 @@
-package com.example.gymbooker.Reservas;
+package com.example.gymbooker.Class;
 
 import java.io.Serializable;
 

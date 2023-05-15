@@ -1,4 +1,4 @@
-package com.example.gymbooker.Reservas;
+package com.example.gymbooker.Adapters;
 
 
 import android.support.annotation.NonNull;
@@ -10,10 +10,11 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.gymbooker.R;
+import com.example.gymbooker.Class.Reserva;
 
 import java.util.ArrayList;
 
-public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> {
+public class ReservasAdapter extends RecyclerView.Adapter<ReservasAdapter.ViewHolder> {
 
     private ArrayList<Reserva> DataSet;
     private onItemClickListener onItemClickListener;
@@ -23,24 +24,24 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         notifyDataSetChanged();
     }
 
-    public CustomAdapter(ArrayList<Reserva> dataSet) {
+    public ReservasAdapter(ArrayList<Reserva> dataSet) {
         DataSet = dataSet;
         this.onItemClickListener = null;
     }
 
-    public void setOnItemClickListener(CustomAdapter.onItemClickListener onItemClickListener) {
+    public void setOnItemClickListener(ReservasAdapter.onItemClickListener onItemClickListener) {
         this.onItemClickListener = onItemClickListener;
     }
 
     @NonNull
     @Override
-    public CustomAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View myView = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_reserva, parent, false);
+    public ReservasAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View myView = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_reserva_item, parent, false);
         return new ViewHolder(myView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CustomAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ReservasAdapter.ViewHolder holder, int position) {
         Reserva myres = DataSet.get(position);
         holder.link(myres);
     }
