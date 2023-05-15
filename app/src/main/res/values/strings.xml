@@ -9,7 +9,7 @@
     <string name="ingresar">Ingresar</string>
     <string name="registrarse">Registrarse</string>
     <string name="iniciarsesion">Iniciar Sesión</string>
-    <string name="pwd">Contraseña</string>
+    <string name="password">Contraseña</string>
     <string name="user">Usuario</string>
     <string name="misentrenamientos">Mis Entrenamientos</string>
     <string name="historial">Historial</string>
