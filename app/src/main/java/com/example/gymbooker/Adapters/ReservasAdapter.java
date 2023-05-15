@@ -2,6 +2,7 @@ package com.example.gymbooker.Adapters;
 
 
 import android.support.annotation.NonNull;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,15 +19,18 @@ public class ReservasAdapter extends RecyclerView.Adapter<ReservasAdapter.ViewHo
 
     private ArrayList<Reserva> DataSet;
     private onItemClickListener onItemClickListener;
+    private int b;
+    private ConstraintLayout constraintLayout;
 
     public void setDataSet(ArrayList<Reserva> dataSet) {
         DataSet = dataSet;
         notifyDataSetChanged();
     }
 
-    public ReservasAdapter(ArrayList<Reserva> dataSet) {
+    public ReservasAdapter(ArrayList<Reserva> dataSet, int b) {
         DataSet = dataSet;
         this.onItemClickListener = null;
+        this.b=b;
     }
 
     public void setOnItemClickListener(ReservasAdapter.onItemClickListener onItemClickListener) {
@@ -36,7 +40,7 @@ public class ReservasAdapter extends RecyclerView.Adapter<ReservasAdapter.ViewHo
     @NonNull
     @Override
     public ReservasAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View myView = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_reserva_item, parent, false);
+        View myView = LayoutInflater.from(parent.getContext()).inflate(R.layout.reserva_item, parent, false);
         return new ViewHolder(myView);
     }
 
@@ -62,6 +66,12 @@ public class ReservasAdapter extends RecyclerView.Adapter<ReservasAdapter.ViewHo
             tv_duracion = itemView.findViewById(R.id.tv_duracion_info);
             tv_rutina = itemView.findViewById(R.id.tv_rutina_info);
             btn = itemView.findViewById(R.id.btn_cancel);
+            constraintLayout=itemView.findViewById(R.id.cltItemReserva);
+
+            btn.setVisibility(b);
+            if (b==View.INVISIBLE){
+                constraintLayout.setMaxHeight(650);
+            }
         }
 
         public void link(Reserva myres){
@@ -92,4 +102,5 @@ public class ReservasAdapter extends RecyclerView.Adapter<ReservasAdapter.ViewHo
         void onItemClick(Reserva myprod, int posicion);
         void onItemBtnClick(Reserva myprod, int posicion);
     }
+
 }
