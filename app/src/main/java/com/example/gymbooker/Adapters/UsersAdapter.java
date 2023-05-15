@@ -1,5 +1,108 @@
 package com.example.gymbooker.Adapters;
 
-public class UsersAdapter {
+import android.support.annotation.NonNull;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.example.gymbooker.Class.User;
+import com.example.gymbooker.R;
+
+import java.util.ArrayList;
+
+public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.ViewHolder> {
+    private ArrayList<User> listUsers;
+    private UsersAdapter.OnItemClickListener onItemClickListener;
+
+    public UsersAdapter(ArrayList<User> listUsers) {
+        this.listUsers = listUsers;
+    }
+
+    public void setListUsers(ArrayList<User> listUsers) {
+        this.listUsers = listUsers;
+        notifyDataSetChanged();
+    }
+
+    public void setOnItemClickListener(UsersAdapter.OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
+    }
+
+    @NonNull
+    @Override
+    public UsersAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.user_item,parent,false);
+
+        return new ViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull UsersAdapter.ViewHolder holder, int i) {
+        User u=listUsers.get(i);
+        holder.enlazar(u);
+
+    }
+
+    @Override
+    public int getItemCount() {
+       return listUsers.size();
+    }
+
+
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
+
+        private TextView nombre,token,fecha;
+
+
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+
+            nombre= itemView.findViewById(R.id.txtNameUser);
+            token=itemView.findViewById(R.id.txtTokenUser);
+            fecha=itemView.findViewById(R.id.txtTokenExpire);
+
+
+        }
+        public void enlazar(User u){
+            nombre.setText(u.getNombre());
+            token.setText(u.getToken());
+            fecha.setText(u.getFechaNacimiento());
+
+
+            if(onItemClickListener!=null){
+                itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        onItemClickListener.onItemClick(u,getAdapterPosition());
+                    }
+                });
+        //       btnEliminar.setOnClickListener(new View.OnClickListener() {
+        //           @Override
+        //           public void onClick(View view) {
+        //               onItemClickListener.onItemEliminarBtn(p,getAdapterPosition());
+        //           }
+        //       });
+        //       btnEditar.setOnClickListener(new View.OnClickListener() {
+        //           @Override
+        //           public void onClick(View view) {
+        //               onItemClickListener.onItemEliminarBtn(p,getAdapterPosition());
+        //           }
+        //       });
+        }
+
+        }
+    }
+
+    public interface OnItemClickListener{
+        void onItemClick(User u, int posicion);
+
+
+    }
 }
+
+

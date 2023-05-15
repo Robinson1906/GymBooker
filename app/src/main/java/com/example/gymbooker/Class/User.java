@@ -11,6 +11,7 @@ public class User implements Serializable {
     private String telefono;
     private String fechaNacimiento;
     private String token;
+    private String id;
 
     public User(int cedula, String nombre, boolean isAdmin, String correo, String telefono, String fechaNacimiento, String token) {
         this.cedula = cedula;
