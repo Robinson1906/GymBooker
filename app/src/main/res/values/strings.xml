@@ -16,8 +16,8 @@
     <string name="configuraciones">Configuraciones</string>
     <string name="registro">Registro</string>
     <string name="correo">Correo</string>
-    <string name="nombre">Nombre</string>
-    <string name="telefono">Telefono</string>
+    <string name="nombre">Nombre:</string>
+    <string name="telefono">Telefono:</string>
     <string name="basico">Basico</string>
     <string name="premium">Premium</string>
     <string name="continuar">Continuar</string>
@@ -28,13 +28,14 @@
     <string name="vacio" />
     <string name="mis_reservas">MIS RESERVAS</string>
     <string name="elegir">Elija una opcion</string>
-    <string name="Cedula">Cedula</string>
+    <string name="Cedula">Cedula:</string>
     <string name="InformacionUsuarios">Informacion Usuarios</string>
-    <string name="TotalRaservas">Total Raservas</string>
-    <string name="ExpiracionToken">Expiracion Token</string>
-    <string name="Duracion">Duracion</string>
-    <string name="HoraIngreso">Hora Ingreso</string>
+    <string name="TotalRaservas">Total Raservas:</string>
+    <string name="ExpiracionToken">Expiracion Token:</string>
+    <string name="Duracion">Duracion:</string>
+    <string name="HoraIngreso">Hora Ingreso:</string>
     <string name="Fecha">Fecha</string>
     <string name="FechaNacimiento">Fecha Nacimiento</string>
+    <string name="token">Token:</string>
 
 </resources>
