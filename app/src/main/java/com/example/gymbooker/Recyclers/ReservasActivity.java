@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.Toast;
 
 import com.example.gymbooker.Adapters.ReservasAdapter;
@@ -14,17 +15,31 @@ import java.util.ArrayList;
 
 public class ReservasActivity extends AppCompatActivity {
 
-    private ArrayList<Reserva> ListaReservas;
+    private ArrayList<Reserva> ListaReservas,listaFinal;
     private RecyclerView rvReservas;
+    private int b= View.VISIBLE;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reservas);
         setTitle("Mis Reservas");
+
         LoadData();
+
+        Intent i = getIntent();
+        Boolean historial= i.getBooleanExtra("historial",false);
+        if (historial){
+            b=View.INVISIBLE;
+        }
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
         rvReservas = findViewById(R.id.rv_reservas);
-        ReservasAdapter myAdapter = new ReservasAdapter(ListaReservas);
+        ReservasAdapter myAdapter = new ReservasAdapter(ListaReservas,b);
 
         myAdapter.setOnItemClickListener(new ReservasAdapter.onItemClickListener() {
             @Override
@@ -33,6 +48,7 @@ public class ReservasActivity extends AppCompatActivity {
                 intent.putExtra("Reserva",myres);
                 startActivity(intent);
             }
+            //Boton cancelar
             @Override
             public void onItemBtnClick(Reserva myres, int posicion) {
                 ListaReservas.remove(posicion);

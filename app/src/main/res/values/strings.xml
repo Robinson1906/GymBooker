@@ -27,5 +27,6 @@
     <string name="agenda_tu_entrenamiento">Agenda tu entrenamiento</string>
     <string name="vacio" />
     <string name="mis_reservas">MIS RESERVAS</string>
+    <string name="elegir">Elija una opcion</string>
 
 </resources>
