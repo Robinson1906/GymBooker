@@ -44,7 +44,9 @@ public class UsersActivity extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int which) {
                                 // The 'which' argument contains the index position
                                 // of the selected item
-                                Class c = null;
+                                Class c = ReservasActivity.class;
+                                Intent j= new Intent(UsersActivity.this,c);
+
                                 Boolean historial=false;
                                 if(which==0) {
                                     c = ReservasActivity.class;
@@ -54,9 +56,10 @@ public class UsersActivity extends AppCompatActivity {
                                     historial = false;
                                 }else if(which==2) {
                                     c = UsuarioActivity.class;
+                                    j.putExtra("user",u);
                                     historial = false;
                                 }
-                                Intent j= new Intent(UsersActivity.this,c);
+                                j.setClass(UsersActivity.this,c);
                                 j.putExtra("historial",historial);
                                 startActivity(j);
 
