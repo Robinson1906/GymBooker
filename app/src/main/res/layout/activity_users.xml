@@ -8,7 +8,7 @@
     tools:context=".Recyclers.UsersActivity">
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/back_users"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:background="@drawable/baseline_arrow_back_24"

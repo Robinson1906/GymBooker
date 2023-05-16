@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.gymbooker.Adapters.UsersAdapter;
@@ -26,12 +28,14 @@ public class UsersActivity extends AppCompatActivity {
     private ArrayList<User> listUser;
 
     private RecyclerView recyclerView;
+    private ImageButton back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_users);
         recyclerView=findViewById(R.id.rvUsers);
+        back=findViewById(R.id.back_users);
         LoadData();
 
         UsersAdapter adapter = new UsersAdapter(listUser);
@@ -73,15 +77,22 @@ public class UsersActivity extends AppCompatActivity {
 
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        back.setOnClickListener(new ImageButton.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent backing = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(backing);
+            }
+        });
     }
 
 
 
-
     public void LoadData(){
-        User u1 = new User(1097608514,"Emilton",true,"faherme46@gmail.com","318","25/04/2005","0001abc");
-        User u2 = new User(1097608514,"Emilton",true,"faherme46@gmail.com","318","25/04/2005","0002abc");
-        User u3 = new User(1097608514,"Emilton",true,"faherme46@gmail.com","318","25/04/2005","0003abc");
+        User u1 = new User(1097608514,"Emilton",1,"faherme46@gmail.com","3166316579","25/04/2005","0001abc");
+        User u2 = new User(1097608514,"Emilton",1,"faherme46@gmail.com","3166316578","25/04/2005","0002abc");
+        User u3 = new User(1097608514,"Emilton",1,"faherme46@gmail.com","3166316577","25/04/2005","0003abc");
 
         listUser = new ArrayList<>();
         listUser.add(u1);
