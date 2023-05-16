@@ -13,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.gymbooker.Class.Reserva;
+import com.example.gymbooker.Helpers.HelperPersona;
+import com.example.gymbooker.Helpers.HelperReservas;
 import com.example.gymbooker.RetroFit.APIService;
 import com.example.gymbooker.RetroFit.ReservaService;
 
@@ -23,11 +25,9 @@ import retrofit2.Retrofit;
 
 
 public class AgendarActivity extends AppCompatActivity {
-    EditText date, horainicial, horafinal, area;
-
-
-    private EditText txtrutina,txthora1,txthora2,txtfecha;
+       private EditText txtrutina,txthora1,txthora2,txtfecha;
     private Button agendar;
+    ImageView back;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -40,14 +40,11 @@ public class AgendarActivity extends AppCompatActivity {
 
         txtrutina = findViewById(R.id.txtrutina);
         txthora1 = findViewById(R.id.txthora1);
-        txthora1 = findViewById(R.id.txthora2);
+        txthora2 = findViewById(R.id.txthora2);
         txtfecha = findViewById(R.id.txtfecha);
+        back=findViewById(R.id.back_agendar);
 
 
-        area = findViewById(R.id.txtRutina);
-        horainicial = findViewById(R.id.TxtHora1);
-        horafinal = findViewById(R.id.TxtHora2);
-        date= findViewById(R.id.TxtFecha);
 
 
 
@@ -60,28 +57,16 @@ public class AgendarActivity extends AppCompatActivity {
         });
     }
     public void guardar(View view){
+        //TODO verificar que la creacion sea correcta
         Reserva r = new Reserva();
-        r.setFecha(date.getText().toString());
-        r.setHoraIngreso(Integer.parseInt(horainicial.getText().toString()));
-        r.setHoraSalida(Integer.parseInt(horafinal.getText().toString()));
-        r.setId_area(Integer.parseInt(area.getText().toString()));
+        r.setFecha(txtfecha.getText().toString());
+        r.setHoraIngreso(Integer.parseInt(txthora1.getText().toString()));
+        r.setHoraSalida(Integer.parseInt(txthora2.getText().toString()));
+
         r.setDuracion(r.getHoraSalida()-r.getHoraIngreso());
 
-        Retrofit myRetro = APIService.getInstance();
-        ReservaService myReservaService = myRetro.create(ReservaService.class);
-
-        myReservaService.postAll(r).enqueue(new Callback<Object>() {
-            @Override
-            public void onResponse(Call<Object> call, Response<Object> response) {
-                Toast.makeText(AgendarActivity.this, "nice", Toast.LENGTH_SHORT).show();
-
-            }
-
-            @Override
-            public void onFailure(Call<Object> call, Throwable t) {
-                Toast.makeText(AgendarActivity.this, "ñao ñao", Toast.LENGTH_SHORT).show();
-            }
-        });
+        HelperReservas helperReservas =new HelperReservas();
+        helperReservas.guardarReserva(r);
 
     }
 

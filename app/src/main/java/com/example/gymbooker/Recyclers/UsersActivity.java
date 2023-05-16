@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.example.gymbooker.Adapters.UsersAdapter;
 import com.example.gymbooker.Class.Reserva;
 import com.example.gymbooker.Class.User;
+import com.example.gymbooker.Helpers.HelperPersona;
 import com.example.gymbooker.MainActivity;
 import com.example.gymbooker.R;
 import com.example.gymbooker.UsuarioActivity;
@@ -90,13 +91,7 @@ public class UsersActivity extends AppCompatActivity {
 
 
     public void LoadData(){
-        User u1 = new User(1097608514,"Emilton",1,"faherme46@gmail.com","3166316579","25/04/2005","0001abc");
-        User u2 = new User(1097608514,"Emilton",1,"faherme46@gmail.com","3166316578","25/04/2005","0002abc");
-        User u3 = new User(1097608514,"Emilton",1,"faherme46@gmail.com","3166316577","25/04/2005","0003abc");
-
-        listUser = new ArrayList<>();
-        listUser.add(u1);
-        listUser.add(u2);
-        listUser.add(u3);
+        HelperPersona helperPersona=new HelperPersona();
+        listUser=helperPersona.getUser();
     }
 }

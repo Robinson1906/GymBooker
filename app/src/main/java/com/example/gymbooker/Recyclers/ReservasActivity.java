@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import com.example.gymbooker.Adapters.ReservasAdapter;
 import com.example.gymbooker.Class.Reserva;
+import com.example.gymbooker.Helpers.HelperReservas;
 import com.example.gymbooker.R;
 
 import java.util.ArrayList;
@@ -61,15 +62,11 @@ public class ReservasActivity extends AppCompatActivity {
     }
 
     public void LoadData(){
-        Reserva res1 = new Reserva("02/05/23","1097608514","Espalda",1600,1800);
-        Reserva res2 = new Reserva("08/05/23","1097608514","Abdomen",900,1100);
-        Reserva res3 = new Reserva("08/05/23","1097608514","Abdomen",900,1100);
-
-        ListaReservas = new ArrayList<>();
-        ListaReservas.add(res1);
-        ListaReservas.add(res2);
-        ListaReservas.add(res3);
+        HelperReservas helperReservas= new HelperReservas();
+        ListaReservas=helperReservas.getReservas();
     }
 
-    public void mandarAHistorial(){}
+    public void mandarAHistorial(){
+        //Todo separara cuando se mandaran a historial
+    }
 }

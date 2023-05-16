@@ -3,8 +3,8 @@ package com.example.gymbooker.Class;
 import java.io.Serializable;
 
 public class Reserva implements Serializable {
-
-    private String fecha, rutina, cedula;
+    private String fecha, rutina;
+    private String cedula;
 
     private int horaIngreso, horaSalida, duracion, estado;
 
@@ -26,7 +26,6 @@ public class Reserva implements Serializable {
         this.horaSalida = horaSalida;
         this.duracion = horaSalida-horaIngreso;
         this.estado=0;
-
     }
 
     public String getFecha() {
@@ -37,28 +36,12 @@ public class Reserva implements Serializable {
         this.fecha = fecha;
     }
 
-    public long getCedula() {
-        return cedula;
+    public String getRutina() {
+        return rutina;
     }
 
-    public void setCedula(long cedula) {
-        this.cedula = cedula;
-    }
-
-    public int getId_reserva() {
-        return id_reserva;
-    }
-
-    public void setId_reserva(int id_reserva) {
-        this.id_reserva = id_reserva;
-    }
-
-    public int getId_area() {
-        return id_area;
-    }
-
-    public void setId_area(int id_area) {
-        this.id_area = id_area;
+    public void setRutina(String rutina) {
+        this.rutina = rutina;
     }
 
     public int getHoraIngreso() {
