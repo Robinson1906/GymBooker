@@ -44,6 +44,8 @@ public class ReservasDiaActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         rvReservas = findViewById(R.id.rvReservasDia);
+
+
         ReservasDiaAdapter myAdapter = new ReservasDiaAdapter(listaFinal);
 
         myAdapter.setOnItemClickListener(new ReservasDiaAdapter.onItemClickListener() {
@@ -53,7 +55,7 @@ public class ReservasDiaActivity extends AppCompatActivity {
                 intent.putExtra("Reserva",myres);
                 startActivity(intent);
             }
-            //Boton cancelar
+
             @Override
             public void onItemBtnAsisteClick(Reserva myres, int posicion) {
                 ListaReservas.remove(posicion);

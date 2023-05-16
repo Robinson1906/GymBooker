@@ -22,7 +22,7 @@
 
 
     <Button
-        android:id="@+id/btnGenerarToken"
+        android:id="@+id/btnMisEntrenamientos"
 
         android:layout_width="191dp"
         android:layout_height="48dp"
@@ -36,7 +36,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.917" />
+        app:layout_constraintVertical_bias="0.931" />
 
     <Button
         android:id="@+id/btnVerUsuarios"
@@ -62,16 +62,17 @@
 
         android:layout_width="193dp"
         android:layout_height="48dp"
+        android:layout_marginTop="400dp"
+
+
         android:background="@drawable/general_button"
 
-
         android:fontFamily="@font/vampiro_one"
-
         android:text="@string/Agendar"
         android:textColor="#FD020202"
         app:layout_constraintBottom_toTopOf="@+id/btnGenerarToken"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.918" />
