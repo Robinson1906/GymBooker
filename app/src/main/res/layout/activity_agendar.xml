@@ -28,6 +28,7 @@
         app:layout_constraintVertical_bias="0.023"
         app:srcCompat="@drawable/baseline_arrow_back_24" />
 
+
     <EditText
         android:id="@+id/TxtHora1"
         android:layout_width="80dp"
@@ -39,10 +40,10 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.586"
+        app:layout_constraintHorizontal_bias="0.311"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.397" />
+        app:layout_constraintVertical_bias="0.616" />
 
     <EditText
         android:id="@+id/TxtHora2"
@@ -55,11 +56,10 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.882"
+        app:layout_constraintHorizontal_bias="0.682"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.397" />
-
+        app:layout_constraintVertical_bias="0.616" />
 
     <TextView
         android:id="@+id/textView6"
@@ -73,11 +73,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
 
-        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintHorizontal_bias="0.147"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.395" />
-
 
     <EditText
         android:id="@+id/ed_date"
@@ -92,12 +91,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
 
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintHorizontal_bias="0.116"
         app:layout_constraintStart_toStartOf="parent"
 
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.267" />
-
+        app:layout_constraintVertical_bias="0.261" />
 
     <TextView
         android:id="@+id/textView7"
@@ -111,15 +109,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
 
-        app:layout_constraintHorizontal_bias="0.697"
+        app:layout_constraintHorizontal_bias="0.143"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.402" />
+        app:layout_constraintVertical_bias="0.521" />
 
     <EditText
         android:id="@+id/TxtFecha"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="163dp"
+        android:layout_height="50dp"
         android:ems="10"
         android:fontFamily="@font/kaushan_script"
         android:hint="@string/hh"
@@ -128,10 +126,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
 
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.867"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.62" />
+        app:layout_constraintVertical_bias="0.395" />
 
 
     <TextView
@@ -146,10 +144,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
 
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.528" />
-
+        app:layout_constraintVertical_bias="0.612" />
 
     <TextView
         android:id="@+id/textView2"
@@ -183,7 +181,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
-        android:id="@+id/Agendar"
+        android:id="@+id/btnConfig"
 
         android:layout_width="141dp"
         android:layout_height="52dp"

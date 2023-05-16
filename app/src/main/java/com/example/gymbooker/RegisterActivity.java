@@ -18,7 +18,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
         txtNombre = findViewById(R.id.txtnombre);
-        txtRegistro = findViewById(R.id.txtRegistro);
+
         txtCorreo = findViewById(R.id.txtCorreo);
         txtCedula = findViewById(R.id.txtCedula);
         txtFnacimiento = findViewById(R.id.txtFnacimiento);
