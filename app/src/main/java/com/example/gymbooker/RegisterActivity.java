@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.example.gymbooker.Class.User;
 import com.example.gymbooker.RetroFit.APIService;
@@ -21,10 +22,6 @@ import retrofit2.Retrofit;
 public class RegisterActivity extends AppCompatActivity {
 
 
-    private TextView txtnombre,txttelefono,txtcorreo,txtcedula,txtfnacimiento;
-    private Button btncontinuar;
-    @SuppressLint("MissingInflatedId")
-
     private Button registrar;
     private ImageButton back;
     private EditText nombre,cedula,correo,telefono,nacimiento;
@@ -35,11 +32,11 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
 
-        txtnombre = findViewById(R.id.txtnombre);
-        txttelefono = findViewById(R.id.txtTelefono);
-        txtcorreo = findViewById(R.id.txtCorreo);
-        txtcedula = findViewById(R.id.txtCedula);
-        txtfnacimiento = findViewById(R.id.txtFnacimiento);
+        nombre = findViewById(R.id.ed_nombre);
+        telefono = findViewById(R.id.ed_telefono);
+        correo = findViewById(R.id.ed_correo);
+        cedula = findViewById(R.id.ed_cedula);
+        nacimiento= findViewById(R.id.ed_nacimiento);
 
 
 
@@ -65,7 +62,7 @@ public class RegisterActivity extends AppCompatActivity {
     public void registrar(View view){
         User u = new User();
         u.setNombre(nombre.getText().toString());
-        u.setCedula(Long.parseLong(cedula.getText().toString()));
+        u.setCedula(cedula.getText().toString());
         u.setCorreo((correo.getText().toString()));
         u.setIsAdmin(0);
         u.setTelefono(telefono.getText().toString());
