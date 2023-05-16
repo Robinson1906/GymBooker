@@ -10,8 +10,18 @@ import android.widget.Toast;
 import com.example.gymbooker.Adapters.ReservasAdapter;
 import com.example.gymbooker.Class.Reserva;
 import com.example.gymbooker.R;
+import com.example.gymbooker.RetroFit.APIService;
+import com.example.gymbooker.RetroFit.ReservaService;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
 
 public class ReservasActivity extends AppCompatActivity {
 
@@ -70,6 +80,30 @@ public class ReservasActivity extends AppCompatActivity {
         ListaReservas.add(res1);
         ListaReservas.add(res2);
         ListaReservas.add(res3);
+
+        Retrofit myRetro = APIService.getInstance();
+        ReservaService myResServ = myRetro.create(ReservaService.class);
+
+        myResServ.getAll().enqueue(new Callback<Object>() {
+            @Override
+            public void onResponse(Call<Object> call, Response<Object> response) {
+                Map<String, Map> data = (Map<String, Map>) response.body();
+
+                for (Map.Entry<String, Map> item:data.entrySet()){
+                    ArrayList ListedData = (ArrayList) item;
+                    for (int i = 0; i < ListedData.size(); i++){
+                        Reserva r = new Reserva();
+                    }
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<Object> call, Throwable t) {
+                Toast.makeText(ReservasActivity.this, "Salió mal", Toast.LENGTH_SHORT).show();
+
+            }
+        });
     }
 
     public void mandarAHistorial(){}
