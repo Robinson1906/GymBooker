@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
         MiEntreno = findViewById(R.id.btmContinuar);
         Historial = findViewById(R.id.Historial);
         Confi = findViewById(R.id.Agendar);
-        back=findViewById(R.id.back_main);
 
         AgendarM.setOnClickListener(new Button.OnClickListener() {
             @Override
@@ -53,12 +52,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        back.setOnClickListener(new ImageView.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent backing = new Intent(getApplicationContext(),LoginActivity.class);
-                startActivity(backing);
-            }
-        });
     }
 }
