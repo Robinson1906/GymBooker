@@ -1,6 +1,7 @@
 package com.example.gymbooker.Recyclers;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -107,13 +108,18 @@ public class ReservasDiaActivity extends AppCompatActivity {
             }
 
             public static void separarFechas(List<LocalDate> ListaReservas, List<LocalDate> fechasPasadas, List<LocalDate> fechasFuturas) {
-                LocalDate fechaActual = LocalDate.now();
+                LocalDate fechaActual = null;
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                    fechaActual = LocalDate.now();
+                }
 
                 for (LocalDate fecha : ListaReservas) {
-                    if (fecha.isBefore(fechaActual)) {
-                        fechasPasadas.add(fecha);
-                    } else {
-                        fechasFuturas.add(fecha);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                        if (fecha.isBefore(fechaActual)) {
+                            fechasPasadas.add(fecha);
+                        } else {
+                            fechasFuturas.add(fecha);
+                        }
                     }
                 }
             }
