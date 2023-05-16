@@ -48,7 +48,7 @@ public class AgendarActivity extends AppCompatActivity {
         r.setFecha(date.getText().toString());
         r.setHoraIngreso(Integer.parseInt(horainicial.getText().toString()));
         r.setHoraSalida(Integer.parseInt(horafinal.getText().toString()));
-        r.setRutina(area.getText().toString());
+        r.setId_area(Integer.parseInt(area.getText().toString()));
         r.setDuracion(r.getHoraSalida()-r.getHoraIngreso());
 
         Retrofit myRetro = APIService.getInstance();
