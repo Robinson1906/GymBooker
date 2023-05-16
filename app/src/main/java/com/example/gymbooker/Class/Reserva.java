@@ -61,7 +61,7 @@ public class Reserva implements Serializable {
     public void setHoraSalida(String horaSalida) {
         this.horaSalida = horaSalida;
     }
-
+//TODO definir calculo de duracion
     public String getDuracion() {
         return duracion;
     }

@@ -29,16 +29,15 @@ public class LoginActivity extends AppCompatActivity{
 
         setContentView(R.layout.activity_login);
 
+
         txtuser=findViewById(R.id.txtTokenLogin);
         preferences=getSharedPreferences("gym-booker",MODE_PRIVATE);
-        if (preferences.getBoolean("logged",false)){
+        int x=preferences.getInt("logged",0);
+        if (x==1){
             Intent i=new Intent(this,MainActivity.class);
             startActivity(i);
             finish();
         }
-
-
-
 
     }
 
@@ -51,21 +50,21 @@ public class LoginActivity extends AppCompatActivity{
 
         if (helperToken.getTokenByToken(loginUser)!=null){
                 SharedPreferences.Editor editor= preferences.edit();
-                editor.putBoolean("logged",true);
                 editor.putString("user","user");
                 editor.apply();
-            Intent i = new Intent(this, MainActivity.class);
+            Intent i = new Intent(this, RegisterActivity.class);
             startActivity(i);
             finish();
         }else {
             Toast.makeText(this, "Token Invalido", Toast.LENGTH_SHORT).show();
+            onRestart();
         }
 
     }
 
     public void clickRegistro(View view){
         SharedPreferences.Editor editor= preferences.edit();
-        editor.putBoolean("logged",true);
+        editor.putInt("logged",1);
         editor.putString("user","admin");
         editor.apply();
         Intent i = new Intent(this, MainActivity.class);
