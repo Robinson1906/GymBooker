@@ -8,6 +8,19 @@ public class HelperToken {
     private ArrayList<Tokens> listToken;
 
     public void getTokens(){
+        //temporal tokens
+        Tokens t1= new Tokens(01,"0001abc","25/04/2005","27/05/2007",1);
+        Tokens t2= new Tokens(01,"0002abc","25/04/2005","27/05/2007",1);
+        Tokens t3= new Tokens(01,"0003abc","25/04/2005","27/05/2007",1);
+        Tokens t4= new Tokens(01,"0004abc","25/04/2005","27/05/2007",1);
+
+        listToken=new ArrayList<>();
+        listToken.add(t1);
+        listToken.add(t2);
+        listToken.add(t3);
+        listToken.add(t4);
+
+
         //listToken=...
 
         //metodo para traer los tokens desde Apex
@@ -20,7 +33,7 @@ public class HelperToken {
         getTokens();
         for (Tokens j:
              listToken) {
-            if(token==j.getTheToken()){
+            if(j.getTheToken().equals(token)){
                 return j;
             }
         }

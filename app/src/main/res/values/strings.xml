@@ -37,5 +37,8 @@
     <string name="Fecha">Fecha</string>
     <string name="FechaNacimiento">Fecha Nacimiento</string>
     <string name="token">Token:</string>
+    <string name="ver_historial">Ver Historial</string>
+    <string name="ver_reservas">Ver Reservas</string>
+    <string name="ver_informacion">Ver Informacion</string>
 
 </resources>
