@@ -29,7 +29,7 @@ import retrofit2.Retrofit;
 public class AgendarActivity extends AppCompatActivity {
     EditText date, horainicial, horafinal, area;
 
-    private EditText txtRutina,TxtHora1,TxtHora2,TxtFecha;
+
     private Button Agendar;
     private ImageView back;
     @SuppressLint("MissingInflatedId")
@@ -40,11 +40,12 @@ public class AgendarActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_agendar);
 
-        txtRutina = findViewById(R.id.txtRutina);
-        TxtHora1 = findViewById(R.id.TxtHora1);
-        TxtHora2 = findViewById(R.id.TxtHora2);
-        TxtFecha = findViewById(R.id.TxtFecha);
-        back = findViewById(R.id.back_agendar);
+
+        area = findViewById(R.id.txtRutina);
+        horainicial = findViewById(R.id.TxtHora1);
+        horafinal = findViewById(R.id.TxtHora2);
+        date= findViewById(R.id.TxtFecha);
+
 
         back.setOnClickListener(new ImageView.OnClickListener() {
             @Override

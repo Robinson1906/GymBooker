@@ -28,6 +28,7 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
         registrar=findViewById(R.id.btn_registrar);
         back=findViewById(R.id.back_register);
         nombre=findViewById(R.id.ed_nombre);
@@ -35,6 +36,7 @@ public class RegisterActivity extends AppCompatActivity {
         correo=findViewById(R.id.ed_correo);
         telefono=findViewById(R.id.ed_telefono);
         nacimiento=findViewById(R.id.ed_nacimiento);
+
 
         Bundle b= getIntent().getExtras();
         Boolean b1=b.getBoolean("admin");
