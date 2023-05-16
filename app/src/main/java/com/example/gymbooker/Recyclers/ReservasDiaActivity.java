@@ -1,20 +1,21 @@
 package com.example.gymbooker.Recyclers;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
 import android.widget.Toast;
 
-import com.example.gymbooker.Adapters.ReservasAdapter;
 import com.example.gymbooker.Adapters.ReservasDiaAdapter;
 import com.example.gymbooker.Class.Reserva;
 import com.example.gymbooker.Helpers.HelperReservas;
 import com.example.gymbooker.R;
-
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
+
+
 
 public class ReservasDiaActivity extends AppCompatActivity {
     private ArrayList<Reserva> ListaReservas;
@@ -72,7 +73,50 @@ public class ReservasDiaActivity extends AppCompatActivity {
 
     }
 
-    public void selecData(){
-        //TODO gestionar la forma en que se seleccionaran las reservas que aparezcan
+
+
+
+        public class SepararFechas {
+            //TODO gestionar la forma en que se seleccionaran las reservas que aparezcan
+            public static void main(String[] args) {
+                List<LocalDate> ListaReservas = new ArrayList<>();
+                ListaReservas.add(LocalDate.of(2022, 1, 1));
+                ListaReservas.add(LocalDate.of(2020, 12, 31));
+                ListaReservas.add(LocalDate.of(2023, 5, 16));
+                ListaReservas.add(LocalDate.of(2023, 6, 1));
+                ListaReservas.add(LocalDate.of(2022, 6, 30));
+
+                List<LocalDate> fechasPasadas = new ArrayList<>();
+                List<LocalDate> fechasFuturas = new ArrayList<>();
+
+                separarFechas(ListaReservas, fechasPasadas, fechasFuturas);
+
+                if (fechasFuturas.isEmpty()) {
+                    System.out.println("No hay fechas recientes en la lista de reservas.");
+                } else {
+                    System.out.println("Fechas pasadas:");
+                    for (LocalDate fecha : fechasPasadas) {
+                        System.out.println(fecha);
+                    }
+
+                    System.out.println("Fechas futuras:");
+                    for (LocalDate fecha : fechasFuturas) {
+                        System.out.println(fecha);
+                    }
+                }
+            }
+
+            public static void separarFechas(List<LocalDate> ListaReservas, List<LocalDate> fechasPasadas, List<LocalDate> fechasFuturas) {
+                LocalDate fechaActual = LocalDate.now();
+
+                for (LocalDate fecha : ListaReservas) {
+                    if (fecha.isBefore(fechaActual)) {
+                        fechasPasadas.add(fecha);
+                    } else {
+                        fechasFuturas.add(fecha);
+                    }
+                }
+            }
+        }
     }
 }
