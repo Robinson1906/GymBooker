@@ -18,6 +18,6 @@ public interface UserService {
     Call<Object> postAll(@Body User miUser);
 
     @DELETE("user/{key}.json")
-    Call<Object> delete(@Path("key") long cedula);
+    Call<Object> delete(@Path("key") String cedula);
 
 }
