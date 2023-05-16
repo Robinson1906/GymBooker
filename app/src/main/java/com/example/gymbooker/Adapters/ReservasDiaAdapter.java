@@ -40,13 +40,14 @@ public class ReservasDiaAdapter extends RecyclerView.Adapter<ReservasDiaAdapter.
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
-        View myView = LayoutInflater.from(parent.getContext()).inflate(R.layout.reserva_item, parent, false);
+        View myView = LayoutInflater.from(parent.getContext()).inflate(R.layout.reserva_item_admin, parent, false);
         return new ViewHolder(myView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ReservasDiaAdapter.ViewHolder viewHolder, int i) {
         Reserva myres= listReserva.get(i);
+        viewHolder.link(myres);
     }
 
 
@@ -56,7 +57,7 @@ public class ReservasDiaAdapter extends RecyclerView.Adapter<ReservasDiaAdapter.
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView nameUser,hInicio,hFin;
+        private TextView nameUser,hInicio,hFin,rutina;
         private Button btnAsiste,btnCancela;
 
         public ViewHolder(@NonNull View itemView) {
@@ -64,6 +65,7 @@ public class ReservasDiaAdapter extends RecyclerView.Adapter<ReservasDiaAdapter.
             nameUser=itemView.findViewById(R.id.txtNameUserReserva);
             hInicio=itemView.findViewById(R.id.txtHoraInicioReserva);
             hFin=itemView.findViewById(R.id.txtHoraFinalReserva);
+            rutina=itemView.findViewById(R.id.txtRutinaReservaDia);
             btnAsiste=itemView.findViewById(R.id.btnMark);
             btnCancela=itemView.findViewById(R.id.btnMark2);
         }
@@ -72,17 +74,18 @@ public class ReservasDiaAdapter extends RecyclerView.Adapter<ReservasDiaAdapter.
             HelperPersona helperPersona=new HelperPersona();
             User u=helperPersona.getUserByCc(myres.getCedula());
             if (u!=null){
-                nameUser.setText(myres.getFecha());
+                nameUser.setText(u.getNombre());
             }else{
                 nameUser.setText("Nemo Nobody");
             }
+            rutina.setText(myres.getRutina());
+            //TODO establecer el transform de las horas
+            //HelperFecha helperFecha=new HelperFecha();
+            //hInicio.setText(helperFecha.numeroATxt(myres.getHoraIngreso()));
+            //hInicio.setText(helperFecha.numeroATxt(myres.getHoraIngreso()));
 
-
-
-            hInicio.setText(myres.getHoraIngreso());
-
-
-
+            hInicio.setText(String.valueOf(myres.getHoraIngreso()));
+            hFin.setText(String.valueOf(myres.getHoraSalida()));
             if(onItemClickListener!=null){
 
                 itemView.setOnClickListener(new View.OnClickListener(){
