@@ -1,10 +1,16 @@
 package com.example.gymbooker.Helpers;
 
+import android.util.Log;
+
+import com.example.gymbooker.Class.Reserva;
 import com.example.gymbooker.Class.Reserva;
 import com.example.gymbooker.RetroFit.APIService;
 import com.example.gymbooker.RetroFit.ReservaService;
+import com.example.gymbooker.RetroFit.ReservaService;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -13,19 +19,45 @@ import retrofit2.Retrofit;
 
 public class HelperReservas {
 
-    public ArrayList<Reserva> getReservas(){
-        //TODO traer reservas del api
-        ArrayList<Reserva> listReserva= new ArrayList<>();
+    ArrayList<Reserva> reservas = new ArrayList<>();
+    public ArrayList<Reserva> getReserva() {
+        Retrofit retrofit = APIService.getInstance();
+        ReservaService ReservaService = retrofit.create(ReservaService.class);
+        ReservaService.getAll().enqueue(new Callback<Object>() {
 
-        Reserva res1 = new Reserva("02/05/23","1097608514","Espalda",1600,1800);
-        Reserva res2 = new Reserva("08/05/23","1097608514","Abdomen",900,1100);
-        Reserva res3 = new Reserva("08/05/23","1097608514","Abdomen",900,1100);
+            @Override
+            public void onResponse(Call<Object> call, Response<Object> response) {
+
+                HashMap<String, ArrayList<HashMap<String, Map>>> dictionary = (HashMap<String, ArrayList<HashMap<String, Map>>>) response.body();
+
+                // Iterating over the Dictionary (HashMap)
+                for (Map.Entry<String, ArrayList<HashMap<String, Map>>> entry : dictionary.entrySet()) {
+                    ArrayList<HashMap<String, Map>> arrayList = entry.getValue();
+                    // Iterating over the ArrayList
+                    for (HashMap<String, Map> item : arrayList) {
+                        // Iterating over each Reserva
+                        for (Map.Entry<String, Map> itemEntry : item.entrySet()) {
+                            Reserva r = new Reserva();
+                            r.setCedula((String) itemEntry.getValue().get("cedula"));
+                            r.setRutina((String) itemEntry.getValue().get("id_area"));
+                            r.setHoraIngreso((int) itemEntry.getValue().get("horainicio"));
+                            r.setHoraSalida((int) itemEntry.getValue().get("horafin"));
+                            r.setEstado((int) itemEntry.getValue().get("estado"));
+
+                            reservas.add(r);
+                        }
+                    }
+                }
+            }
 
 
-        listReserva.add(res1);
-        listReserva.add(res2);
-        listReserva.add(res3);
-        return listReserva;
+            @Override
+            public void onFailure(Call<Object> call, Throwable t) {
+                Log.d("myLog", t.toString());
+
+            }
+        });
+        return reservas;
     }
 
 
