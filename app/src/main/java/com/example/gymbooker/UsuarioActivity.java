@@ -1,8 +1,8 @@
 package com.example.gymbooker;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.example.gymbooker.Class.Tokens;
@@ -18,6 +18,7 @@ public class UsuarioActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usuario);
+
 
         Intent i= getIntent();
         u= (User) i.getSerializableExtra("user");
@@ -52,4 +53,7 @@ public class UsuarioActivity extends AppCompatActivity {
         HelperToken helperToken =new HelperToken();
         token= helperToken.getTokenByToken(u.getToken());
     }
-}
+
+
+
+    }
