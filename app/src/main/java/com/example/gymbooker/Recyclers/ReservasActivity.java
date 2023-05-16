@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import com.example.gymbooker.Adapters.ReservasAdapter;
 import com.example.gymbooker.Class.Reserva;
+import com.example.gymbooker.Helpers.HelperReservas;
 import com.example.gymbooker.R;
 import com.example.gymbooker.RetroFit.APIService;
 import com.example.gymbooker.RetroFit.ReservaService;
@@ -33,7 +34,6 @@ public class ReservasActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reservas);
-        setTitle("Mis Reservas");
 
         LoadData();
 
@@ -72,6 +72,7 @@ public class ReservasActivity extends AppCompatActivity {
     }
 
     public void LoadData(){
+
         Reserva res1 = new Reserva();
         Reserva res2 = new Reserva();
         Reserva res3 = new Reserva();
@@ -104,7 +105,13 @@ public class ReservasActivity extends AppCompatActivity {
 
             }
         });
+
+        //HelperReservas helperReservas= new HelperReservas();
+        //ListaReservas=helperReservas.getReservas();
+
     }
 
-    public void mandarAHistorial(){}
+    public void mandarAHistorial(){
+        //Todo separara cuando se mandaran a historial
+    }
 }

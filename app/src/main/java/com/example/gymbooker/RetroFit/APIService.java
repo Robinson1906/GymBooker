@@ -8,6 +8,7 @@ public abstract class APIService {
     private static final String API_Url =  "https://apex.oracle.com/pls/apex/gymbooker/RESTAPI_GYMBOOKER/";
     private static Retrofit instance = null;
 
+
     public static Retrofit getInstance(){
         if(instance == null){
             instance = new Retrofit.Builder()
