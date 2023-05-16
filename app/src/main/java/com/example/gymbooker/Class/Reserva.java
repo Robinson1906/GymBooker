@@ -3,29 +3,30 @@ package com.example.gymbooker.Class;
 import java.io.Serializable;
 
 public class Reserva implements Serializable {
-    private String fecha, nombre_area;
-    private long cedula;
-    private int id_reserva,id_area,horaIngreso, horaSalida, duracion;
+
+    private String fecha, rutina, cedula;
+
+    private int horaIngreso, horaSalida, duracion, estado;
+
+    //Estados=
+    //0. Pendiente
+    //1 Asistido
+    //2 Cancelado
+
+
 
     public Reserva() {
+        this.estado=0;
     }
-
-    public String getNombre_area() {
-        return nombre_area;
-    }
-
-    public void setNombre_area(String nombre_area) {
-        this.nombre_area = nombre_area;
-    }
-
-    public Reserva(String fecha, long cedula, int id_area, int horaIngreso, int horaSalida, int duracion, String nombre_area) {
+    public Reserva(String fecha,String cedula, String rutina, int horaIngreso, int horaSalida) {
         this.fecha = fecha;
-        this.cedula = cedula;
-        this.id_area = id_area;
+        this.cedula=cedula;
+        this.rutina = rutina;
         this.horaIngreso = horaIngreso;
         this.horaSalida = horaSalida;
-        this.duracion = duracion;
-        this.nombre_area = nombre_area;
+        this.duracion = horaSalida-horaIngreso;
+        this.estado=0;
+
     }
 
     public String getFecha() {
@@ -82,5 +83,17 @@ public class Reserva implements Serializable {
 
     public void setDuracion(int duracion) {
         this.duracion = duracion;
+    }
+
+    public String getCedula() {
+        return cedula;
+    }    public void setCedula(String cedula) {
+        this.cedula = cedula;
+    }
+
+    public int getEstado() {
+        return estado;
+    }    public void setEstado(int estado) {
+        this.estado = estado;
     }
 }

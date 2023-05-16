@@ -64,9 +64,13 @@ public class LoginActivity extends AppCompatActivity{
     }
 
     public void clickRegistro(View view){
-        Intent i = new Intent(LoginActivity.this, RegisterActivity.class);
-        i.putExtra("admin",true);
+        SharedPreferences.Editor editor= preferences.edit();
+        editor.putBoolean("logged",true);
+        editor.putString("user","admin");
+        editor.apply();
+        Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
+        finish();
     }
 
     public void dialogToken(View view){
