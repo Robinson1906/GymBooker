@@ -1,6 +1,6 @@
 package com.example.gymbooker.RetroFit;
 
-import com.example.gymbooker.Reservas.Reserva;
+import com.example.gymbooker.Class.Reserva;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
