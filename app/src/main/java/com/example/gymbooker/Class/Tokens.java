@@ -7,9 +7,11 @@ public class Tokens implements Serializable {
     private String theToken;
     private String fVencimiento;
     private String fCreacion;
-    private boolean isLimited;
+    private int isLimited;
 
-    public Tokens(int idToken, String theToken, String fVencimiento, String fCreacion, boolean isLimited) {
+    public Tokens(){}
+
+    public Tokens(int idToken, String theToken,  String fCreacion,String fVencimiento, int isLimited) {
         this.idToken = idToken;
         this.theToken = theToken;
         this.fVencimiento = fVencimiento;
@@ -40,9 +42,9 @@ public class Tokens implements Serializable {
         this.fCreacion = fCreacion;
     }
 
-    public boolean isLimited() {
+    public int isLimited() {
         return isLimited;
-    } public void setLimited(boolean limited) {
+    } public void setLimited(int limited) {
         isLimited = limited;
     }
 }

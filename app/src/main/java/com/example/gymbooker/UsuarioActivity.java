@@ -31,14 +31,20 @@ public class UsuarioActivity extends AppCompatActivity {
         txtExpiracion=findViewById(R.id.txtTokenExpireUser);
 
         txtName.setText(u.getNombre());
-        txtCc.setText(u.getCedula());
+        txtCc.setText(String.valueOf(u.getCedula()));
         txtFechaNacimiento.setText(u.getFechaNacimiento());
         txtTelefono.setText(u.getTelefono());
-        txtTotalReservas.setText(u.getNombre());
+        //txtTotalReservas.setText(u.getNombre());
 
         getToken();
-        txtToken.setText(token.getTheToken());
-        txtExpiracion.setText(token.getfVencimiento());
+        if (token!=null){
+            txtToken.setText(token.getTheToken());
+            txtExpiracion.setText(token.getfVencimiento());
+        }else{
+            txtToken.setText("");
+            txtExpiracion.setText("");
+        }
+
 
     }
 

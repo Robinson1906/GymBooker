@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.Toast;
 
 import com.example.gymbooker.Adapters.UsersAdapter;
@@ -37,9 +38,8 @@ public class UsersActivity extends AppCompatActivity {
         adapter.setOnItemClickListener(new UsersAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(User u, int posicion) {
-
-                AlertDialog.Builder builder = new AlertDialog.Builder(UsersActivity.this);
-                builder.setTitle(R.string.elegir)
+               AlertDialog.Builder builder = new AlertDialog.Builder(UsersActivity.this);
+                builder.setTitle(u.getNombre().toString())
                         .setItems(R.array.opciones, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                                 // The 'which' argument contains the index position
@@ -62,11 +62,12 @@ public class UsersActivity extends AppCompatActivity {
                                 j.setClass(UsersActivity.this,c);
                                 j.putExtra("historial",historial);
                                 startActivity(j);
-
                             }
                         });
                 builder.create();
                 builder.show();
+
+
             }
         });
 
@@ -75,10 +76,12 @@ public class UsersActivity extends AppCompatActivity {
     }
 
 
+
+
     public void LoadData(){
-        User u1 = new User(1097608514,"Espalda",true,"faherme46@gmail.com","318","27/05/07","T1");
-        User u2 = new User(1097608514,"Abdomen",true,"faherme46@gmail.com","318","27/05/07","T1");
-        User u3 = new User(1097608514,"Abdomen",true,"faherme46@gmail.com","318","27/05/07","T1");
+        User u1 = new User(1097608514,"Emilton",true,"faherme46@gmail.com","318","25/04/2005","0001abc");
+        User u2 = new User(1097608514,"Emilton",true,"faherme46@gmail.com","318","25/04/2005","0002abc");
+        User u3 = new User(1097608514,"Emilton",true,"faherme46@gmail.com","318","25/04/2005","0003abc");
 
         listUser = new ArrayList<>();
         listUser.add(u1);
