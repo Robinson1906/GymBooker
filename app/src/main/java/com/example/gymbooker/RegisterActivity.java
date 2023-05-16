@@ -20,6 +20,11 @@ import retrofit2.Retrofit;
 
 public class RegisterActivity extends AppCompatActivity {
 
+
+    private TextView txtnombre,txttelefono,txtcorreo,txtcedula,txtfnacimiento;
+    private Button btncontinuar;
+    @SuppressLint("MissingInflatedId")
+
     private Button registrar;
     private ImageButton back;
     private EditText nombre,cedula,correo,telefono,nacimiento;
@@ -29,13 +34,13 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        registrar=findViewById(R.id.btn_registrar);
-        back=findViewById(R.id.back_register);
-        nombre=findViewById(R.id.ed_nombre);
-        cedula=findViewById(R.id.ed_cedula);
-        correo=findViewById(R.id.ed_correo);
-        telefono=findViewById(R.id.ed_telefono);
-        nacimiento=findViewById(R.id.ed_nacimiento);
+
+        txtnombre = findViewById(R.id.txtnombre);
+        txttelefono = findViewById(R.id.txtTelefono);
+        txtcorreo = findViewById(R.id.txtCorreo);
+        txtcedula = findViewById(R.id.txtCedula);
+        txtfnacimiento = findViewById(R.id.txtFnacimiento);
+
 
 
         Bundle b= getIntent().getExtras();

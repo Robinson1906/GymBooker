@@ -5,10 +5,8 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-
-import android.widget.Button;
-
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -17,8 +15,6 @@ import android.widget.Toast;
 import com.example.gymbooker.Class.Reserva;
 import com.example.gymbooker.RetroFit.APIService;
 import com.example.gymbooker.RetroFit.ReservaService;
-
-import java.security.interfaces.RSAKey;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -30,8 +26,9 @@ public class AgendarActivity extends AppCompatActivity {
     EditText date, horainicial, horafinal, area;
 
 
-    private Button Agendar;
-    private ImageView back;
+    private EditText txtrutina,txthora1,txthora2,txtfecha;
+    private Button agendar;
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,10 +38,17 @@ public class AgendarActivity extends AppCompatActivity {
         setContentView(R.layout.activity_agendar);
 
 
+        txtrutina = findViewById(R.id.txtrutina);
+        txthora1 = findViewById(R.id.txthora1);
+        txthora1 = findViewById(R.id.txthora2);
+        txtfecha = findViewById(R.id.txtfecha);
+
+
         area = findViewById(R.id.txtRutina);
         horainicial = findViewById(R.id.TxtHora1);
         horafinal = findViewById(R.id.TxtHora2);
         date= findViewById(R.id.TxtFecha);
+
 
 
         back.setOnClickListener(new ImageView.OnClickListener() {
@@ -79,5 +83,8 @@ public class AgendarActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private class RetroFit {
     }
 }

@@ -11,8 +11,8 @@
         android:layout_width="79dp"
         android:layout_height="29dp"
         android:layout_weight="1"
-        android:text="Token"
         android:fontFamily="@font/kaushan_script"
+        android:text="@string/Cedula"
         app:layout_constraintEnd_toStartOf="@+id/txtTokenExpire"
         app:layout_constraintStart_toEndOf="@+id/txtNameUser"
         app:layout_constraintTop_toTopOf="@+id/txtNameUser" />
@@ -36,8 +36,8 @@
         android:layout_marginStart="25dp"
         android:layout_marginTop="20dp"
         android:layout_weight="1"
-        android:text="Name"
         android:fontFamily="@font/kaushan_script"
+        android:text="@string/nombre"
         app:layout_constraintEnd_toStartOf="@+id/txtTokenUser"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
