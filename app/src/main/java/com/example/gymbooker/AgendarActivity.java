@@ -10,8 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.gymbooker.Class.Reserva;
-import com.example.gymbooker.Class.User;
-import com.example.gymbooker.Helpers.HelperPersona;
+
 import com.example.gymbooker.Helpers.HelperReservas;
 import com.example.gymbooker.RetroFit.APIService;
 import com.example.gymbooker.RetroFit.ReservaService;
@@ -25,8 +24,9 @@ import retrofit2.Retrofit;
 public class AgendarActivity extends AppCompatActivity {
     EditText date, horainicial, horafinal, area;
 
-    private EditText txtrutina,txthora1,txthora2,txtfecha;
+    private EditText txtrutina, txthora1, txthora2, txtfecha;
     private Button agendar;
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,23 +43,22 @@ public class AgendarActivity extends AppCompatActivity {
 
 
     }
-    public void guardar(View view){
-        HelperReservas bInstance = new HelperReservas();
+
+
+    public void guardar(View view) {
+
         Reserva r = new Reserva();
         r.setFecha(date.getText().toString());
-        r.setHoraIngreso(Integer.parseInt(horainicial.getText().toString()));
-        r.setHoraSalida(Integer.parseInt(horafinal.getText().toString()));
+        r.setHoraIngreso(horainicial.getText().toString());
+        r.setHoraSalida(horafinal.getText().toString());
         r.setRutina(area.getText().toString());
-        r.setDuracion(r.getHoraSalida()-r.getHoraIngreso());
-        agendar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bInstance.guardarReserva(r);
-            }
-        });
+
+        r.setDuracion("0");
+
+        HelperReservas helperReservas = new HelperReservas();
+        helperReservas.guardarReserva(r);
+
 
     }
 
-    private class RetroFit {
-    }
 }

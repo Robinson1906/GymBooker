@@ -1,12 +1,14 @@
 package com.example.gymbooker.Class;
 
+import com.example.gymbooker.Helpers.HelperFecha;
+
 import java.io.Serializable;
 
 public class Reserva implements Serializable {
-    private String fecha, rutina;
+    private String fecha, rutina,horaIngreso, horaSalida,duracion;
     private String cedula;
 
-    private int horaIngreso, horaSalida, duracion, estado;
+    private int   estado;
 
     //Estados=
     //0. Pendiente
@@ -18,13 +20,13 @@ public class Reserva implements Serializable {
     public Reserva() {
         this.estado=0;
     }
-    public Reserva(String fecha,String cedula, String rutina, int horaIngreso, int horaSalida) {
+    public Reserva(String fecha,String cedula, String rutina, String horaIngreso,String horaSalida) {
         this.fecha = fecha;
         this.cedula=cedula;
         this.rutina = rutina;
         this.horaIngreso = horaIngreso;
         this.horaSalida = horaSalida;
-        this.duracion = horaSalida-horaIngreso;
+        HelperFecha helperFecha=new HelperFecha();
         this.estado=0;
     }
 
@@ -44,27 +46,27 @@ public class Reserva implements Serializable {
         this.rutina = rutina;
     }
 
-    public int getHoraIngreso() {
+    public String getHoraIngreso() {
         return horaIngreso;
     }
 
-    public void setHoraIngreso(int horaIngreso) {
+    public void setHoraIngreso(String horaIngreso) {
         this.horaIngreso = horaIngreso;
     }
 
-    public int getHoraSalida() {
+    public String getHoraSalida() {
         return horaSalida;
     }
 
-    public void setHoraSalida(int horaSalida) {
+    public void setHoraSalida(String horaSalida) {
         this.horaSalida = horaSalida;
     }
 
-    public int getDuracion() {
+    public String getDuracion() {
         return duracion;
     }
 
-    public void setDuracion(int duracion) {
+    public void setDuracion(String duracion) {
         this.duracion = duracion;
     }
 

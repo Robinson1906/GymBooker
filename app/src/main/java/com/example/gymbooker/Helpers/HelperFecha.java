@@ -1,42 +1,106 @@
 package com.example.gymbooker.Helpers;
 
+import android.os.Build;
+
+import com.example.gymbooker.Class.Reserva;
+
+import java.text.DateFormat;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
+import java.util.Locale;
 
 public class HelperFecha {
 
+    public static String timeToString(LocalTime hora){
 
-        public static boolean verificarExpiracion(Date fecha) {
-            Calendar fechaActual = Calendar.getInstance();
-            Calendar fechaComparacion = Calendar.getInstance();
-            fechaComparacion.setTime(fecha);
+        DateTimeFormatter formatter = null;
+        String horaTexto=null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            formatter = DateTimeFormatter.ofPattern("HH:mm");
+            horaTexto = hora.format(formatter);
 
-            // Comparar las fechas
-            if (fechaActual.after(fechaComparacion)) {
-                // La fecha ya ha pasado
-                return true;
-            }
-
-            // La fecha aún no ha pasado
-            return false;
         }
 
-        public static void main(String[] args) {
-            // Obtener la fecha actual
-            Date fechaActual = new Date();
+        return horaTexto;
+    }
+    public LocalTime getHoraActual(){
+        LocalTime horaActual = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            horaActual = LocalTime.now();
+        }
+        return horaActual;
+    }
 
-            // Crear una fecha de ejemplo (2 días atrás)
-            Calendar cal = Calendar.getInstance();
-            cal.add(Calendar.DATE, -2);
-            Date fechaEjemplo = cal.getTime();
+    public LocalTime stringToTime(String hora){
+        LocalTime horas=null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            horas = LocalTime.parse(hora);
+        }
+        return horas;
 
-            // Verificar si la fecha de ejemplo ha expirado
-            boolean expirada = verificarExpiracion(fechaEjemplo);
+    }
 
-            if (expirada) {
-                System.out.println("La fecha ha expirado");
-            } else {
-                System.out.println("La fecha aún no ha expirado");
+
+    public static boolean verificarExpiracion(Date fecha) {
+        Calendar fechaActual = Calendar.getInstance();
+        Calendar fechaComparacion = Calendar.getInstance();
+        fechaComparacion.setTime(fecha);
+        // Comparar las fechas
+        if (fechaActual.after(fechaComparacion)) {
+            // La fecha ya ha pasado
+            return true;
+        }
+        // La fecha aún no ha pasado
+        return false;
+    }
+    public LocalDate getFechaActual(){
+        LocalDate fechaActual = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            fechaActual = LocalDate.now();
+        }
+        return fechaActual;
+    }
+    public ArrayList<Reserva> fechasPasadas(ArrayList<Reserva> listReservas){
+        LocalDate fechaActual = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            fechaActual = LocalDate.now();
+        }
+        ArrayList<Reserva> pasadas=new ArrayList<>();
+        for (Reserva r : listReservas) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                if (toLocalDate(r.getFecha()).isBefore(fechaActual)) {
+                    pasadas.add(r);
+                }
             }
         }
+        return pasadas;
+    }
+    public ArrayList<Reserva> fechasFuturas(ArrayList<Reserva> listReservas){
+        LocalDate fechaActual = getFechaActual();
+        ArrayList<Reserva> futuras=new ArrayList<>();
+        for (Reserva r : listReservas) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                if (fechaActual.isBefore(toLocalDate(r.getFecha()))) {
+                    futuras.add(r);
+                }
+            }
+        }
+        return futuras;
+    }
+
+    public LocalDate toLocalDate(String fecha){
+
+        LocalDate localDate=null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            localDate= LocalDate.parse(fecha);
+        }
+        return  localDate;
+    }
+
 }
+
