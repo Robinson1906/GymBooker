@@ -3,12 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/fondo3"
     android:layout_height="match_parent"
     tools:context=".RegisterActivity">
 
     <ImageButton
-        android:id="@+id/imageButton5"
+        android:id="@+id/back_register"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:background="@drawable/baseline_arrow_back_24"
@@ -38,7 +37,7 @@
         app:layout_constraintVertical_bias="0.06" />
 
     <EditText
-        android:id="@+id/txtCorreo"
+        android:id="@+id/ed_correo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="208dp"
@@ -54,7 +53,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvRegistro" />
 
     <EditText
-        android:id="@+id/txtCedula"
+        android:id="@+id/ed_cedula"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="288dp"
@@ -70,7 +69,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvRegistro" />
 
     <EditText
-        android:id="@+id/txtFnacimiento"
+        android:id="@+id/ed_nacimiento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="364dp"
@@ -86,7 +85,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvRegistro" />
 
     <EditText
-        android:id="@+id/txtnombre"
+        android:id="@+id/ed_nombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
@@ -102,7 +101,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvRegistro" />
 
     <EditText
-        android:id="@+id/txtTelefono"
+        android:id="@+id/ed_telefono"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -115,25 +114,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtnombre" />
+        app:layout_constraintTop_toBottomOf="@+id/ed_nombre" />
 
     <Button
-        android:id="@+id/btnGenerarToken"
+
+        android:id="@+id/btn_registrar"
+
         android:layout_width="163dp"
         android:layout_height="55dp"
         android:layout_marginBottom="76dp"
         android:background="@drawable/general_button"
         android:fontFamily="@font/vampiro_one"
+        android:onClick="registrar"
         android:text="Continuar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        >
+        app:layout_constraintTop_toBottomOf="@+id/ed_nombre"
+        app:layout_constraintVertical_bias="0.914">
+
 
     </Button>
-
- 
-
 
 
 </android.support.constraint.ConstraintLayout>

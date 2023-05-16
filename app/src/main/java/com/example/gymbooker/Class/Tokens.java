@@ -3,11 +3,8 @@ package com.example.gymbooker.Class;
 import java.io.Serializable;
 
 public class Tokens implements Serializable {
-    private int idToken;
-    private String theToken;
-    private String fVencimiento;
-    private String fCreacion;
-    private int isLimited;
+    private int idToken,isLimited;
+    private String theToken,fVencimiento,fCreacion;
 
     public Tokens(){}
 

@@ -49,6 +49,9 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".Adapters.ReservasAdapter"
+            android:exported="false" />
+        <activity
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity

@@ -100,8 +100,6 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.ViewHolder> 
 
     public interface OnItemClickListener{
         void onItemClick(User u, int posicion);
-
-
     }
 }
 
