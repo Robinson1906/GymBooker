@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.gymbooker.Recyclers.ReservasActivity;
+import com.example.gymbooker.Recyclers.ReservasDiaActivity;
 import com.example.gymbooker.Recyclers.UsersActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -96,7 +97,8 @@ public class MainActivity extends AppCompatActivity {
         reservas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i=new Intent(MainActivity.this,ReservasActivity.class);
+                Intent i=new Intent(MainActivity.this, ReservasDiaActivity.class);
+                startActivity(i);
             }
         });
     }

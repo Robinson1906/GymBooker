@@ -49,5 +49,7 @@
     <string name="admin">Administrador</string>
     <string name="reservasDia">Reservas Por Dia</string>
     <string name="elegirFecha">Elija la Fecha</string>
+    <string name="ejemploFecha">dd/mm/aaaa</string>
+    <string name="ejemploNombre">Emilton Fabian Hernandez Mejia</string>
 
 </resources>
