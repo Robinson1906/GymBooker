@@ -1,39 +1,68 @@
 package com.example.gymbooker.Helpers;
 
+import android.media.session.MediaSession;
+import android.util.Log;
+
 import com.example.gymbooker.Class.Tokens;
+import com.example.gymbooker.RetroFit.APIService;
+import com.example.gymbooker.RetroFit.TokensService;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
 
 public class HelperToken {
-    private ArrayList<Tokens> listToken;
+    ArrayList<Tokens> Tokens = new ArrayList<>();
+    public ArrayList<Tokens> getTokens() {
+        Retrofit retrofit = APIService.getInstance();
+        TokensService TokenService = retrofit.create(TokensService.class);
+        TokenService.getAll().enqueue(new Callback<Object>() {
 
-    public void getTokens(){
-        //todo traer tokens del api
-        //temporal tokens
-        Tokens t1= new Tokens(01,"0001abc","2005-04-25","2007-05-27",1);
-        Tokens t2= new Tokens(01,"0002abc","2005-04-25","2007-05-27",1);
-        Tokens t3= new Tokens(01,"0003abc","2005-04-25","2007-05-27",1);
-        Tokens t4= new Tokens(01,"0004abc","2005-04-25","2007-05-27",1);
-
-        listToken=new ArrayList<>();
-        listToken.add(t1);
-        listToken.add(t2);
-        listToken.add(t3);
-        listToken.add(t4);
+            @Override
+            public void onResponse(Call<Object> call, Response<Object> response) {
 
 
-        //listToken=...
+                HashMap<String, ArrayList<HashMap<String, Map>>> dictionary = (HashMap<String, ArrayList<HashMap<String, Map>>>) response.body();
 
-        //metodo para traer los tokens desde Apex
-        //la clase Tokens esta ya creada, trae los tokens y los almacena en el Array listToken
+                // Iterating over the Dictionary (HashMap)
+                for (Map.Entry<String, ArrayList<HashMap<String, Map>>> entry : dictionary.entrySet()) {
+                    ArrayList<HashMap<String, Map>> arrayList = entry.getValue();
+                    // Iterating over the ArrayList
+                    for (HashMap<String, Map> item : arrayList) {
+                        // Iterating over each Token
+                        for (Map.Entry<String, Map> itemEntry : item.entrySet()) {
+                            Tokens t = new Tokens();
+                            t.setIdToken((int) itemEntry.getValue().get("id_token"));
+                            t.setTheToken((String) itemEntry.getValue().get("thetoken"));
+                            t.setfCreacion((String) itemEntry.getValue().get("fechaCreacion"));
+                            t.setfVencimiento((String) itemEntry.getValue().get("fechaLimite"));
+                            t.setLimited((int) itemEntry.getValue().get("isLimited"));
 
+                            Tokens.add(t);
+                        }
+                    }
+                }
+            }
+
+
+            @Override
+            public void onFailure(Call<Object> call, Throwable t) {
+                Log.d("myLog", t.toString());
+
+            }
+        });
+        return Tokens;
     }
 
     //Metodo que llama la lista de tokens y busca segun el token indicado
     public Tokens getTokenByToken(String token){
-        getTokens();
         for (Tokens j:
-             listToken) {
+                getTokens()) {
             if(j.getTheToken().equals(token)){
                 return j;
             }

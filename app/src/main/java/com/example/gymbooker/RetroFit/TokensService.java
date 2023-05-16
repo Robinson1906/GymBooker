@@ -1,23 +1,23 @@
 package com.example.gymbooker.RetroFit;
 
 import com.example.gymbooker.Class.Reserva;
+import com.example.gymbooker.Class.Tokens;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
-import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
-public interface ReservaService {
-    @GET("reserva.json")
+public interface TokensService {
+    @GET("access_token.json")
     Call<Object> getAll();
 
-    @POST("reserva.json")
-    Call<Object> postAll(@Body Reserva miReserva);
+    @POST("access_token.json")
+    Call<Object> postAll(@Body Tokens miToken);
 
-    @DELETE("reserva/{key}.json")
+    @DELETE("access_token/{key}.json")
     Call<Object> delete(@Path("key") String id);
 
 }
