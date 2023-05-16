@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-        miEntreno = findViewById(R.id.btnGenerarToken);
+        miEntreno = findViewById(R.id.btnMisEntrenamientos);
         miEntreno.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -74,12 +74,9 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
-
     }
 
     private  void startAdmin(){
-
         generar=findViewById(R.id.btnGenerarToken);
         generar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -130,7 +127,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
     }
     private String generarToken(){
         String banco = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";

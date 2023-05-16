@@ -69,6 +69,7 @@ public class ReservasDiaActivity extends AppCompatActivity {
                 ListaReservas.remove(posicion);
                 myAdapter.setDataSet(ListaReservas);
                 //TODO acciones al marcar cancelado
+                //todo modificar el estado al cancelar
                 Toast.makeText(ReservasDiaActivity.this, "Cancelado", Toast.LENGTH_SHORT).show();
             }
         });

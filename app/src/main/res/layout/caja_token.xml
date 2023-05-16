@@ -7,7 +7,7 @@
 
     <EditText
         android:id="@+id/fechaElegidaDia"
-        android:layout_width="132dp"
+        android:layout_width="166dp"
         android:layout_height="48dp"
         android:layout_marginTop="20dp"
         android:autofillHints=""
@@ -18,28 +18,30 @@
         app:layout_constraintBottom_toBottomOf="parent"
 
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.831"
+        app:layout_constraintHorizontal_bias="0.82"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.572" />
+        app:layout_constraintVertical_bias="0.53"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="185dp"
         android:layout_height="62dp"
+        android:layout_marginTop="24dp"
         android:fontFamily="@font/kaushan_script"
-        android:text="Fecha de Expriracion"
+        android:text="@string/fExpiracion"
         android:textColor="@color/black"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.163"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="85dp" />
+        app:layout_constraintTop_toBottomOf="@+id/tvRegistro" />
 
     <TextView
         android:id="@+id/tvRegistro"
-        android:layout_width="256dp"
-        android:layout_height="98dp"
+        android:layout_width="match_parent"
+        android:layout_height="61dp"
         android:fontFamily="@font/kaushan_script"
         android:text="Generar Token"
         android:textAlignment="center"
@@ -48,17 +50,24 @@
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.039" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <CheckBox
         android:id="@+id/checkBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="175dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="155dp"
         android:fontFamily="@font/kaushan_script"
-        android:text="Ilimitado"
-        tools:layout_editor_absoluteX="175dp"
-        tools:layout_editor_absoluteY="174dp" />
+        android:minHeight="48dp"
+        android:text="@string/ilimtado"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fechaElegidaDia" />
 
 </android.support.constraint.ConstraintLayout>

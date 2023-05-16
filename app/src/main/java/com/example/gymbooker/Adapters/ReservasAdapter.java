@@ -76,7 +76,7 @@ public class ReservasAdapter extends RecyclerView.Adapter<ReservasAdapter.ViewHo
 
         public void link(Reserva myres){
             tv_fecha.setText(myres.getFecha());
-            tv_hora.setText(myres.getHoraIngreso() + ":" + myres.getHoraSalida());
+            tv_hora.setText(myres.getHoraIngreso());
             tv_duracion.setText(myres.getDuracion());
 
             if(onItemClickListener!=null){

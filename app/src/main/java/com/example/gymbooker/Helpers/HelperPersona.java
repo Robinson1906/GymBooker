@@ -22,7 +22,7 @@ public class HelperPersona {
     ArrayList<User> users = new ArrayList<>();
 
     public ArrayList<User> getUser() {
-        //todo traer los usuarios del api
+
         Retrofit retrofit = APIService.getInstance();
         UserService userService = retrofit.create(UserService.class);
         userService.getAll().enqueue(new Callback<Object>() {
@@ -77,8 +77,8 @@ public class HelperPersona {
         return users;
     }
 
-
-    public void guardarPersona(User u){
+    static int resp=0;
+    public int guardarPersona(User u){
 
         //TODO Verificar el funcionamiento
 
@@ -89,15 +89,15 @@ public class HelperPersona {
         myReservaService.postAll(u).enqueue(new Callback<Object>() {
             @Override
             public void onResponse(Call<Object> call, Response<Object> response) {
-
+                resp=200;
             }
 
             @Override
             public void onFailure(Call<Object> call, Throwable t) {
-
+                resp=201;
             }
         });
-
+        return resp;
     }
     public User getUserByCc(String cc){
         ArrayList<User> users = getUser();

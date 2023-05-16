@@ -30,7 +30,7 @@ import retrofit2.Retrofit;
 
 public class ReservasActivity extends AppCompatActivity {
 
-    private ArrayList<Reserva> ListaReservas,listaFinal;
+    private ArrayList<Reserva> ListaReservas,listaFinal,listaFiltrada;
     private RecyclerView rvReservas;
     private TextView tv_misreservastitle;
     private int b;
@@ -47,7 +47,7 @@ public class ReservasActivity extends AppCompatActivity {
         Boolean historial= i.getBooleanExtra("historial",false);
         HelperFecha helperFecha=new HelperFecha();
         if (historial){
-            listaFinal=helperFecha.fechasPasadas(ListaReservas);
+            listaFinal=helperFecha.fechasPasadas(listaFiltrada);
 
             b=View.INVISIBLE;
         }else{
@@ -58,8 +58,7 @@ public class ReservasActivity extends AppCompatActivity {
                 tv_misreservastitle.setText("RESERVAS");
                 b=View.INVISIBLE;
             }
-            listaFinal=helperFecha.fechasFuturas(ListaReservas);
-
+            listaFinal=helperFecha.fechasFuturas(listaFiltrada);
 
         }
 
@@ -69,7 +68,6 @@ public class ReservasActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         rvReservas = findViewById(R.id.rv_reservas);
-
         ReservasAdapter myAdapter = new ReservasAdapter(listaFinal,b);
 
         myAdapter.setOnItemClickListener(new ReservasAdapter.onItemClickListener() {
@@ -95,7 +93,15 @@ public class ReservasActivity extends AppCompatActivity {
     public void LoadData(){
         HelperReservas helperReservas= new HelperReservas();
         ListaReservas=helperReservas.getReserva();
-
+        preferences=getSharedPreferences("gym-booker",MODE_PRIVATE);
+        String cc=preferences.getString("ccUsuario","");
+        listaFiltrada=new ArrayList<>();
+        for (Reserva r:
+             ListaReservas) {
+            if (r.getCedula().equals(cc)){
+                listaFiltrada.add(r);
+            }
+        }
     }
 
 }

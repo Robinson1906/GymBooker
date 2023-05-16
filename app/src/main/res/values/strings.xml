@@ -53,6 +53,8 @@
     <string name="ejemploFecha">dd/mm/aaaa</string>
     <string name="ejemploNombre">Emilton Fabian Hernandez Mejia</string>
     <string name="token">Token</string>
+    <string name="fExpiracion">Fecha de Expriracion</string>
+    <string name="ilimtado">No vence</string>
 
 
 </resources>
