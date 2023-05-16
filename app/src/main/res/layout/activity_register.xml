@@ -126,7 +126,7 @@
         android:layout_marginBottom="76dp"
         android:background="@drawable/general_button"
         android:fontFamily="@font/vampiro_one"
-        android:onClick="registrar"
+        android:onClick="onClicGuardar"
         android:text="Continuar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

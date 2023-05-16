@@ -10,6 +10,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.gymbooker.Class.Reserva;
+import com.example.gymbooker.Class.User;
+import com.example.gymbooker.Helpers.HelperPersona;
+import com.example.gymbooker.Helpers.HelperReservas;
 import com.example.gymbooker.RetroFit.APIService;
 import com.example.gymbooker.RetroFit.ReservaService;
 
@@ -36,30 +39,22 @@ public class AgendarActivity extends AppCompatActivity {
         txthora1 = findViewById(R.id.txthora1);
         txthora1 = findViewById(R.id.txthora2);
         txtfecha = findViewById(R.id.txtfecha);
+        agendar = findViewById(R.id.btn_agendar);
 
 
     }
     public void guardar(View view){
+        HelperReservas bInstance = new HelperReservas();
         Reserva r = new Reserva();
         r.setFecha(date.getText().toString());
         r.setHoraIngreso(Integer.parseInt(horainicial.getText().toString()));
         r.setHoraSalida(Integer.parseInt(horafinal.getText().toString()));
         r.setRutina(area.getText().toString());
         r.setDuracion(r.getHoraSalida()-r.getHoraIngreso());
-
-        Retrofit myRetro = APIService.getInstance();
-        ReservaService myReservaService = myRetro.create(ReservaService.class);
-
-        myReservaService.postAll(r).enqueue(new Callback<Object>() {
+        agendar.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onResponse(Call<Object> call, Response<Object> response) {
-                Toast.makeText(AgendarActivity.this, "nice", Toast.LENGTH_SHORT).show();
-
-            }
-
-            @Override
-            public void onFailure(Call<Object> call, Throwable t) {
-                Toast.makeText(AgendarActivity.this, "ñao ñao", Toast.LENGTH_SHORT).show();
+            public void onClick(View v) {
+                bInstance.guardarReserva(r);
             }
         });
 

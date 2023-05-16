@@ -68,9 +68,6 @@ public class HelperPersona {
 
     public void guardarPersona(User u){
 
-
-
-
         //TODO Verificar el funcionamiento
 
 

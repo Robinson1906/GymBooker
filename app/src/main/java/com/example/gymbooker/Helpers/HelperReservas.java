@@ -1,7 +1,9 @@
 package com.example.gymbooker.Helpers;
 
 import android.util.Log;
+import android.widget.Toast;
 
+import com.example.gymbooker.AgendarActivity;
 import com.example.gymbooker.Class.Reserva;
 import com.example.gymbooker.Class.Reserva;
 import com.example.gymbooker.RetroFit.APIService;
@@ -64,7 +66,6 @@ public class HelperReservas {
 
     public void guardarReserva(Reserva r){
 
-
         Retrofit myRetro = APIService.getInstance();
         ReservaService myReservaService = myRetro.create(ReservaService.class);
 
@@ -73,7 +74,6 @@ public class HelperReservas {
             public void onResponse(Call<Object> call, Response<Object> response) {
 
             }
-
             @Override
             public void onFailure(Call<Object> call, Throwable t) {
 
