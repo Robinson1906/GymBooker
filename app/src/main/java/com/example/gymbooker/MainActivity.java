@@ -8,19 +8,18 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
 
-import com.example.gymbooker.Adapters.ReservasAdapter;
+import com.example.gymbooker.Class.Tokens;
 import com.example.gymbooker.Helpers.HelperFecha;
+import com.example.gymbooker.Helpers.HelperToken;
 import com.example.gymbooker.Recyclers.ReservasActivity;
 
-import com.example.gymbooker.Recyclers.ReservasActivity;
 import com.example.gymbooker.Recyclers.ReservasDiaActivity;
 import com.example.gymbooker.Recyclers.UsersActivity;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -49,8 +48,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void startUser() {
-
-
         agendar = findViewById(R.id.btnReservasDia);
         agendar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,11 +84,31 @@ public class MainActivity extends AppCompatActivity {
         generar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String token=null;
+                HelperToken helperToken=new HelperToken();
+                ArrayList<Tokens> listToken= helperToken.getTokens();
+                do{
+                    token=generarToken();
+                }while (helperToken.getTokenByToken(token)!=null);
+                HelperFecha helperFecha=new HelperFecha();
+                Tokens t=new Tokens();
+                t.setTheToken(token);
+                t.setfCreacion(helperFecha.getFechaActual().toString());
+                //todo cuadrar fechas con Dialog
+                boolean isUnlimited=true;
+                LocalDate date=null;
+                if (isUnlimited){
+                    t.isLimited(0);
+                    t.setfVencimiento("null");
+                }else {
+                    t.isLimited(1);
+                    t.setfVencimiento(date.toString());
+                }
 
             }
         });
         config= findViewById(R.id.btnConfig);
-        generar.setOnClickListener(new View.OnClickListener() {
+        config.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -114,5 +131,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+    private String generarToken(){
+        String banco = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+
+
+        String cadena = "";
+       for (int x = 0; x < 12; x++) {
+           int indiceAleatorio = ThreadLocalRandom.current().nextInt(0, banco.length() + 1);
+           char caracterAleatorio = banco.charAt(indiceAleatorio);
+           cadena += caracterAleatorio;
+       }
+        return cadena;
     }
 }
