@@ -81,18 +81,6 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.ViewHolder> 
                         onItemClickListener.onItemClick(u,getAdapterPosition());
                     }
                 });
-        //       btnEliminar.setOnClickListener(new View.OnClickListener() {
-        //           @Override
-        //           public void onClick(View view) {
-        //               onItemClickListener.onItemEliminarBtn(p,getAdapterPosition());
-        //           }
-        //       });
-        //       btnEditar.setOnClickListener(new View.OnClickListener() {
-        //           @Override
-        //           public void onClick(View view) {
-        //               onItemClickListener.onItemEliminarBtn(p,getAdapterPosition());
-        //           }
-        //       });
         }
 
         }

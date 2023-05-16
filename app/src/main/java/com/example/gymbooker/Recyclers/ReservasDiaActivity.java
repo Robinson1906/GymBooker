@@ -6,10 +6,12 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.gymbooker.Adapters.ReservasDiaAdapter;
 import com.example.gymbooker.Class.Reserva;
+import com.example.gymbooker.Helpers.HelperFecha;
 import com.example.gymbooker.Helpers.HelperReservas;
 import com.example.gymbooker.R;
 import java.time.LocalDate;
@@ -19,15 +21,22 @@ import java.util.List;
 
 
 public class ReservasDiaActivity extends AppCompatActivity {
-    private ArrayList<Reserva> ListaReservas;
+    private ArrayList<Reserva> ListaReservas, listaFinal;
     private RecyclerView rvReservas;
+    private EditText fechadia;
+    private String fechaElegida;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reservas_dia);
+        HelperFecha helperFecha = new HelperFecha();
+        fechaElegida=helperFecha.getFechaActual().toString();
+        listaFinal=new ArrayList<>();
         LoadData();
+        fechadia=findViewById(R.id.fechaElegidaDia);
+        fechadia.setText(fechaElegida);
 
     }
 
@@ -35,7 +44,7 @@ public class ReservasDiaActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         rvReservas = findViewById(R.id.rvReservasDia);
-        ReservasDiaAdapter myAdapter = new ReservasDiaAdapter(ListaReservas);
+        ReservasDiaAdapter myAdapter = new ReservasDiaAdapter(listaFinal);
 
         myAdapter.setOnItemClickListener(new ReservasDiaAdapter.onItemClickListener() {
             @Override
@@ -68,61 +77,21 @@ public class ReservasDiaActivity extends AppCompatActivity {
 
 
     public void LoadData(){
-        //TODO añadir conexion con base de datos
+
         HelperReservas helperReservas=new HelperReservas();
         ListaReservas=helperReservas.getReservas();
-
-    }
-
-
-
-
-        public class SepararFechas {
-            //TODO gestionar la forma en que se seleccionaran las reservas que aparezcan
-            public static void main(String[] args) {
-                List<LocalDate> ListaReservas = new ArrayList<>();
-                ListaReservas.add(LocalDate.of(2022, 1, 1));
-                ListaReservas.add(LocalDate.of(2020, 12, 31));
-                ListaReservas.add(LocalDate.of(2023, 5, 16));
-                ListaReservas.add(LocalDate.of(2023, 6, 1));
-                ListaReservas.add(LocalDate.of(2022, 6, 30));
-
-                List<LocalDate> fechasPasadas = new ArrayList<>();
-                List<LocalDate> fechasFuturas = new ArrayList<>();
-
-                separarFechas(ListaReservas, fechasPasadas, fechasFuturas);
-
-                if (fechasFuturas.isEmpty()) {
-                    System.out.println("No hay fechas recientes en la lista de reservas.");
-                } else {
-                    System.out.println("Fechas pasadas:");
-                    for (LocalDate fecha : fechasPasadas) {
-                        System.out.println(fecha);
-                    }
-
-                    System.out.println("Fechas futuras:");
-                    for (LocalDate fecha : fechasFuturas) {
-                        System.out.println(fecha);
-                    }
-                }
+        for (Reserva r:
+             ListaReservas) {
+            if(r.getFecha().equals(fechaElegida)){
+                listaFinal.add(r);
             }
 
-            public static void separarFechas(List<LocalDate> ListaReservas, List<LocalDate> fechasPasadas, List<LocalDate> fechasFuturas) {
-                LocalDate fechaActual = null;
-                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                    fechaActual = LocalDate.now();
-                }
-
-                for (LocalDate fecha : ListaReservas) {
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                        if (fecha.isBefore(fechaActual)) {
-                            fechasPasadas.add(fecha);
-                        } else {
-                            fechasFuturas.add(fecha);
-                        }
-                    }
-                }
-            }
         }
+
     }
-}
+
+
+
+
+
+    }

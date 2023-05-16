@@ -61,7 +61,19 @@ public class HelperPersona {
                 Log.d("myLog", t.toString());
 
             }
-        });
+    });
+
+        /*ArrayList<User> users = new ArrayList<>();
+        User u1 = new User("1097608514", "Emilton Fabian Hernandez Mejia", 1, "faherme46@gmail.com", "3166316579", "2005-04-25", "0001abc");
+        User u2 = new User("1097608514","Emilton Fabian Hernandez Mejia",1,"faherme46@gmail.com","3166316578","2005-04-25","0002abc");
+        User u3 = new User("1097608514","Emilton Fabian Hernandez Mejia",1,"faherme46@gmail.com","3166316577","2005-04-25","0003abc");
+
+
+        users.add(u1);
+        users.add(u2);
+        users.add(u3);*/
+
+
         return users;
     }
 
