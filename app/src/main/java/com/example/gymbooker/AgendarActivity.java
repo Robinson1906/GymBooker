@@ -1,8 +1,12 @@
 package com.example.gymbooker;
 
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+
+import android.widget.Button;
+
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -18,17 +22,26 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 
+
 public class AgendarActivity extends AppCompatActivity {
     EditText date, horainicial, horafinal, area;
 
+    private EditText txtRutina,TxtHora1,TxtHora2,TxtFecha;
+    private Button Agendar;
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity_agendar);
-        date = findViewById(R.id.ed_date);
-        horainicial = findViewById(R.id.ed_horainicial);
-        horafinal = findViewById(R.id.ed_horafinal);
-        area = findViewById(R.id.ed_area);
+
+        txtRutina = findViewById(R.id.txtRutina);
+        TxtHora1 = findViewById(R.id.TxtHora1);
+        TxtHora2 = findViewById(R.id.TxtHora2);
+        TxtFecha = findViewById(R.id.TxtFecha);
+
+
     }
     public void guardar(View view){
         Reserva r = new Reserva();
@@ -53,5 +66,6 @@ public class AgendarActivity extends AppCompatActivity {
                 Toast.makeText(AgendarActivity.this, "ñao ñao", Toast.LENGTH_SHORT).show();
             }
         });
+
     }
 }
