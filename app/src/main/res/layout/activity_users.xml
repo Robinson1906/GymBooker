@@ -7,6 +7,19 @@
     android:background="@drawable/fondo3"
     tools:context=".Recyclers.UsersActivity">
 
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/baseline_arrow_back_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.079"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.054"
+        tools:ignore="SpeakableTextPresentCheck" />
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rvUsers"
         android:layout_width="353dp"
