@@ -1,43 +1,27 @@
 package com.example.gymbooker;
 
-import android.content.Intent;
+import android.annotation.SuppressLint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.TextView;
-
-import com.example.gymbooker.Class.User;
-import com.example.gymbooker.RetroFit.APIService;
-import com.example.gymbooker.RetroFit.ReservaService;
-import com.example.gymbooker.RetroFit.UserService;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
 
 public class RegisterActivity extends AppCompatActivity {
 
-
-    private Button registrar;
-    private ImageButton back;
-    private EditText nombre,cedula,correo,telefono,nacimiento;
-
+    private TextView txtnombre,txttelefono,txtcorreo,txtcedula,txtfnacimiento;
+    private Button btmcontinuar;
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
 
-        nombre = findViewById(R.id.ed_nombre);
-        telefono = findViewById(R.id.ed_telefono);
-        correo = findViewById(R.id.ed_correo);
-        cedula = findViewById(R.id.ed_cedula);
-        nacimiento= findViewById(R.id.ed_nacimiento);
-
+        txtnombre = findViewById(R.id.ed_nombre);
+        txttelefono = findViewById(R.id.ed_telefono);
+        txtcorreo = findViewById(R.id.ed_correo);
+        txtcedula = findViewById(R.id.ed_cedula);
+        txtfnacimiento = findViewById(R.id.ed_nacimiento);
 
 
         Bundle b= getIntent().getExtras();
@@ -49,39 +33,5 @@ public class RegisterActivity extends AppCompatActivity {
 
         }
 
-        back.setOnClickListener(new ImageButton.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent backing = new Intent(getApplicationContext(),LoginActivity.class);
-                startActivity(backing);
-            }
-        });
-
-    }
-
-    public void registrar(View view){
-        User u = new User();
-        u.setNombre(nombre.getText().toString());
-        u.setCedula(cedula.getText().toString());
-        u.setCorreo((correo.getText().toString()));
-        u.setIsAdmin(0);
-        u.setTelefono(telefono.getText().toString());
-        u.setFechaNacimiento(nacimiento.getText().toString());
-        u.setToken("");
-
-        Retrofit myRetro = APIService.getInstance();
-        UserService myUserService = myRetro.create(UserService.class);
-
-        myUserService.postAll(u).enqueue(new Callback<Object>() {
-            @Override
-            public void onResponse(Call<Object> call, Response<Object> response) {
-
-            }
-
-            @Override
-            public void onFailure(Call<Object> call, Throwable t) {
-
-            }
-        });
     }
 }

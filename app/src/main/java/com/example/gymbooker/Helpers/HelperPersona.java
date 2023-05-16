@@ -1,14 +1,15 @@
 package com.example.gymbooker.Helpers;
 
+
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
 import com.example.gymbooker.AgendarActivity;
 import com.example.gymbooker.Class.Reserva;
+
 import com.example.gymbooker.Class.User;
 import com.example.gymbooker.RetroFit.APIService;
-import com.example.gymbooker.RetroFit.ReservaService;
 import com.example.gymbooker.RetroFit.UserService;
 
 import java.io.IOException;
@@ -98,4 +99,5 @@ public class HelperPersona {
 
     public HelperPersona() {
     }
+
 }

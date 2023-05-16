@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
-        android:fontFamily="@font/andika"
+        android:fontFamily="@font/kaushan_script"
         android:text="@string/hh"
         android:textAlignment="center"
         android:textColor="@color/gray"
@@ -45,7 +45,7 @@
         android:layout_marginStart="4dp"
         android:layout_marginTop="3dp"
         android:layout_marginEnd="4dp"
-        android:fontFamily="@font/andika"
+        android:fontFamily="@font/kaushan_script"
         android:text="@string/barra"
         android:textColor="@color/gray"
         android:textSize="20sp"
@@ -57,7 +57,7 @@
         android:id="@+id/txtHoraInicioReserva"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/andika"
+        android:fontFamily="@font/kaushan_script"
         android:text="@string/hh"
         android:textAlignment="center"
         android:textColor="@color/gray"
@@ -111,5 +111,6 @@
         app:layout_constraintHorizontal_bias="0.155"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
 </android.support.constraint.ConstraintLayout>
