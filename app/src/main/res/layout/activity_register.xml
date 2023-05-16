@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/fondo3"
     android:layout_height="match_parent"
     tools:context=".RegisterActivity">
 
@@ -37,7 +38,7 @@
         app:layout_constraintVertical_bias="0.06" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/txtCorreo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="208dp"
@@ -53,7 +54,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvRegistro" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/txtCedula"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="288dp"
@@ -69,7 +70,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvRegistro" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName5"
+        android:id="@+id/txtFnacimiento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="364dp"
@@ -85,7 +86,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvRegistro" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/txtnombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
@@ -101,7 +102,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvRegistro" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/txtTelefono"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -114,10 +115,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+        app:layout_constraintTop_toBottomOf="@+id/txtnombre" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btmContinuar"
         android:layout_width="163dp"
         android:layout_height="55dp"
         android:layout_marginBottom="76dp"

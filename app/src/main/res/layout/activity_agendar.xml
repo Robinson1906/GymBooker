@@ -21,7 +21,7 @@
         app:srcCompat="@drawable/baseline_arrow_back_24" />
 
     <EditText
-        android:id="@+id/editTextDate2"
+        android:id="@+id/TxtHora1"
         android:layout_width="80dp"
         android:layout_height="55dp"
         android:ems="10"
@@ -37,7 +37,7 @@
         app:layout_constraintVertical_bias="0.397" />
 
     <EditText
-        android:id="@+id/editTextDate3"
+        android:id="@+id/TxtHora2"
         android:layout_width="80dp"
         android:layout_height="55dp"
         android:ems="10"
@@ -100,7 +100,7 @@
         app:layout_constraintVertical_bias="0.402" />
 
     <EditText
-        android:id="@+id/editTextDate"
+        android:id="@+id/TxtFecha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -147,7 +147,7 @@
         app:layout_constraintVertical_bias="0.139" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/txtRutina"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -162,7 +162,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/Agendar"
         android:layout_width="141dp"
         android:layout_height="52dp"
         android:background="@drawable/general_button"
