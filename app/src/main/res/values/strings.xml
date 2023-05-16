@@ -44,9 +44,6 @@
 
     <string name="token1">¿Que es Token?</string>
     <string name="explicacion_token">Es un codigo de acceso generado por el Administrador  que permite ingresar al sistema del Gym</string>
-
-    
-    <string name="explicacion_token">token</string>
     <string name="usuarios">Ver Usuarios</string>
     <string name="generar">Generar Token</string>
     <string name="verReserva">Reservas del Dia</string>
@@ -55,6 +52,7 @@
     <string name="elegirFecha">Elija la Fecha</string>
     <string name="ejemploFecha">dd/mm/aaaa</string>
     <string name="ejemploNombre">Emilton Fabian Hernandez Mejia</string>
+    <string name="token">Token</string>
 
 
 </resources>
