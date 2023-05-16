@@ -32,10 +32,10 @@ public class ReservasDiaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reservas_dia);
         HelperFecha helperFecha = new HelperFecha();
-        fechaElegida=helperFecha.getFechaActual().toString();
-        listaFinal=new ArrayList<>();
+        fechaElegida = helperFecha.getFechaActual().toString();
+        listaFinal = new ArrayList<>();
         LoadData();
-        fechadia=findViewById(R.id.fechaElegidaDia);
+        fechadia = findViewById(R.id.fechaElegidaDia);
         fechadia.setText(fechaElegida);
 
     }
@@ -51,8 +51,8 @@ public class ReservasDiaActivity extends AppCompatActivity {
         myAdapter.setOnItemClickListener(new ReservasDiaAdapter.onItemClickListener() {
             @Override
             public void onItemClick(Reserva myres, int posicion) {
-                Intent intent = new Intent(ReservasDiaActivity.this,Reserva.class);
-                intent.putExtra("Reserva",myres);
+                Intent intent = new Intent(ReservasDiaActivity.this, Reserva.class);
+                intent.putExtra("Reserva", myres);
                 startActivity(intent);
             }
 
@@ -61,7 +61,7 @@ public class ReservasDiaActivity extends AppCompatActivity {
                 ListaReservas.remove(posicion);
                 myAdapter.setDataSet(ListaReservas);
                 //TODO acciones al marcar asistido
-                Toast.makeText(ReservasDiaActivity.this,"Asistido", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ReservasDiaActivity.this, "Asistido", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -69,7 +69,7 @@ public class ReservasDiaActivity extends AppCompatActivity {
                 ListaReservas.remove(posicion);
                 myAdapter.setDataSet(ListaReservas);
                 //TODO acciones al marcar cancelado
-                Toast.makeText(ReservasDiaActivity.this,"Cancelado", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ReservasDiaActivity.this, "Cancelado", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -78,13 +78,13 @@ public class ReservasDiaActivity extends AppCompatActivity {
     }
 
 
-    public void LoadData(){
+    public void LoadData() {
 
-        HelperReservas helperReservas=new HelperReservas();
-        ListaReservas=helperReservas.getReservas();
-        for (Reserva r:
-             ListaReservas) {
-            if(r.getFecha().equals(fechaElegida)){
+        HelperReservas helperReservas = new HelperReservas();
+        ListaReservas = helperReservas.getReserva();
+        for (Reserva r :
+                ListaReservas) {
+            if (r.getFecha().equals(fechaElegida)) {
                 listaFinal.add(r);
             }
 
@@ -92,8 +92,4 @@ public class ReservasDiaActivity extends AppCompatActivity {
 
     }
 
-
-
-
-
-    }
+}
