@@ -17,11 +17,11 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
 
-        txtnombre = findViewById(R.id.txtnombre);
-        txttelefono = findViewById(R.id.txtTelefono);
-        txtcorreo = findViewById(R.id.txtCorreo);
-        txtcedula = findViewById(R.id.txtCedula);
-        txtfnacimiento = findViewById(R.id.txtFnacimiento);
+        txtnombre = findViewById(R.id.ed_nombre);
+        txttelefono = findViewById(R.id.ed_telefono);
+        txtcorreo = findViewById(R.id.ed_correo);
+        txtcedula = findViewById(R.id.ed_cedula);
+        txtfnacimiento = findViewById(R.id.ed_nacimiento);
 
 
         Bundle b= getIntent().getExtras();
