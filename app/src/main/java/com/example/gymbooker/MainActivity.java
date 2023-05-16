@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.example.gymbooker.Adapters.ReservasAdapter;
+import com.example.gymbooker.Recyclers.ReservasActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         MiEntreno.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent forward_Reservas = new Intent(getApplicationContext(), ReservasAdapter.class);
+                Intent forward_Reservas = new Intent(getApplicationContext(), ReservasActivity.class);
                 startActivity(forward_Reservas);
             }
         });

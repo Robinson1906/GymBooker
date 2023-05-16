@@ -2,6 +2,7 @@ package com.example.gymbooker;
 
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
@@ -9,6 +10,8 @@ import android.widget.Button;
 
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.gymbooker.Class.Reserva;
@@ -28,6 +31,7 @@ public class AgendarActivity extends AppCompatActivity {
 
     private EditText txtRutina,TxtHora1,TxtHora2,TxtFecha;
     private Button Agendar;
+    private ImageView back;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +44,15 @@ public class AgendarActivity extends AppCompatActivity {
         TxtHora1 = findViewById(R.id.TxtHora1);
         TxtHora2 = findViewById(R.id.TxtHora2);
         TxtFecha = findViewById(R.id.TxtFecha);
+        back = findViewById(R.id.back_agendar);
 
-
+        back.setOnClickListener(new ImageView.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent backing = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(backing);
+            }
+        });
     }
     public void guardar(View view){
         Reserva r = new Reserva();
