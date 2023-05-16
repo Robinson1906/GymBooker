@@ -8,6 +8,7 @@ public class HelperToken {
     private ArrayList<Tokens> listToken;
 
     public void getTokens(){
+        //todo traer tokens del api
         //temporal tokens
         Tokens t1= new Tokens(01,"0001abc","25/04/2005","27/05/2007",1);
         Tokens t2= new Tokens(01,"0002abc","25/04/2005","27/05/2007",1);

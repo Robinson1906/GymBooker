@@ -32,7 +32,7 @@ public class ReservasDiaActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        rvReservas = findViewById(R.id.rv_reservas);
+        rvReservas = findViewById(R.id.rvReservasDia);
         ReservasDiaAdapter myAdapter = new ReservasDiaAdapter(ListaReservas);
 
         myAdapter.setOnItemClickListener(new ReservasDiaAdapter.onItemClickListener() {
