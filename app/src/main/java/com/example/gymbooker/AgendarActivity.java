@@ -2,11 +2,14 @@ package com.example.gymbooker;
 
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.gymbooker.Class.Reserva;
@@ -22,8 +25,10 @@ import retrofit2.Retrofit;
 public class AgendarActivity extends AppCompatActivity {
     EditText date, horainicial, horafinal, area;
 
+
     private EditText txtrutina,txthora1,txthora2,txtfecha;
     private Button agendar;
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,19 +37,34 @@ public class AgendarActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_agendar);
 
+
         txtrutina = findViewById(R.id.txtrutina);
         txthora1 = findViewById(R.id.txthora1);
         txthora1 = findViewById(R.id.txthora2);
         txtfecha = findViewById(R.id.txtfecha);
 
 
+        area = findViewById(R.id.txtRutina);
+        horainicial = findViewById(R.id.TxtHora1);
+        horafinal = findViewById(R.id.TxtHora2);
+        date= findViewById(R.id.TxtFecha);
+
+
+
+        back.setOnClickListener(new ImageView.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent backing = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(backing);
+            }
+        });
     }
     public void guardar(View view){
         Reserva r = new Reserva();
         r.setFecha(date.getText().toString());
         r.setHoraIngreso(Integer.parseInt(horainicial.getText().toString()));
         r.setHoraSalida(Integer.parseInt(horafinal.getText().toString()));
-        r.setRutina(area.getText().toString());
+        r.setId_area(Integer.parseInt(area.getText().toString()));
         r.setDuracion(r.getHoraSalida()-r.getHoraIngreso());
 
         Retrofit myRetro = APIService.getInstance();

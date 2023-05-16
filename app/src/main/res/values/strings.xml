@@ -41,8 +41,20 @@
     <string name="ver_reservas">Ver Reservas</string>
     <string name="ver_informacion">Ver Informacion</string>
     <string name="ingresar_token">Ingrese Token</string>
+
     <string name="token1">¿Que es Token?</string>
     <string name="explicacion_token">Es un codigo de acceso generado por el Administrador  que permite ingresar al sistema del Gym</string>
-    <string name="token">token</string>
+
+    
+    <string name="explicacion_token">token</string>
+    <string name="usuarios">Ver Usuarios</string>
+    <string name="generar">Generar Token</string>
+    <string name="verReserva">Reservas del Dia</string>
+    <string name="admin">Administrador</string>
+    <string name="reservasDia">Reservas Por Dia</string>
+    <string name="elegirFecha">Elija la Fecha</string>
+    <string name="ejemploFecha">dd/mm/aaaa</string>
+    <string name="ejemploNombre">Emilton Fabian Hernandez Mejia</string>
+
 
 </resources>
