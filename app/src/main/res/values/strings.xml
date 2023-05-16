@@ -40,5 +40,8 @@
     <string name="ver_historial">Ver Historial</string>
     <string name="ver_reservas">Ver Reservas</string>
     <string name="ver_informacion">Ver Informacion</string>
+    <string name="ingresar_token">Ingrese Token</string>
+    <string name="que_es_token">¿Que es Token?</string>
+    <string name="explicacion_token">token</string>
 
 </resources>
