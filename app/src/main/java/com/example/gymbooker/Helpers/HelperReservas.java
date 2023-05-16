@@ -42,8 +42,8 @@ public class HelperReservas {
                             Reserva r = new Reserva();
                             r.setCedula((String) itemEntry.getValue().get("cedula"));
                             r.setRutina((String) itemEntry.getValue().get("id_area"));
-                            r.setHoraIngreso((int) itemEntry.getValue().get("horainicio"));
-                            r.setHoraSalida((int) itemEntry.getValue().get("horafin"));
+                            r.setHoraIngreso((String) itemEntry.getValue().get("horainicio"));
+                            r.setHoraSalida((String) itemEntry.getValue().get("horafin"));
                             r.setEstado((int) itemEntry.getValue().get("estado"));
 
                             reservas.add(r);

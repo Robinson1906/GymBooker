@@ -80,10 +80,6 @@ public class ReservasDiaAdapter extends RecyclerView.Adapter<ReservasDiaAdapter.
                 nameUser.setText("Nemo Nobody");
             }
             rutina.setText(myres.getRutina());
-            //TODO establecer el transform de las horas
-            //HelperFecha helperFecha=new HelperFecha();
-            //hInicio.setText(helperFecha.numeroATxt(myres.getHoraIngreso()));
-            //hInicio.setText(helperFecha.numeroATxt(myres.getHoraIngreso()));
 
             hInicio.setText(String.valueOf(myres.getHoraIngreso()));
             hFin.setText(String.valueOf(myres.getHoraSalida()));
@@ -98,12 +94,16 @@ public class ReservasDiaAdapter extends RecyclerView.Adapter<ReservasDiaAdapter.
                 btnAsiste.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        btnCancela.setVisibility(View.INVISIBLE);
+                        btnAsiste.setClickable(false);
                         onItemClickListener.onItemBtnAsisteClick(myres,getAdapterPosition());
                     }
                 });
                 btnCancela.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        btnAsiste.setVisibility(View.INVISIBLE);
+                        btnCancela.setClickable(false);
                         onItemClickListener.onItemBtnCancelaClick(myres,getAdapterPosition());
                     }
                 });

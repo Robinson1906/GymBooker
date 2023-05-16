@@ -94,7 +94,7 @@ public class ReservasActivity extends AppCompatActivity {
 
     public void LoadData(){
         HelperReservas helperReservas= new HelperReservas();
-        ListaReservas=helperReservas.getReservas();
+        ListaReservas=helperReservas.getReserva();
 
     }
 
