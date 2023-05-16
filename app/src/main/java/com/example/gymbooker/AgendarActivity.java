@@ -16,6 +16,7 @@ import com.example.gymbooker.RetroFit.ReservaService;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.Retrofit;
 
 
 public class AgendarActivity extends AppCompatActivity {
@@ -46,7 +47,7 @@ public class AgendarActivity extends AppCompatActivity {
         r.setRutina(area.getText().toString());
         r.setDuracion(r.getHoraSalida()-r.getHoraIngreso());
 
-        RetroFit myRetro = APIService.getInstance();
+        Retrofit myRetro = APIService.getInstance();
         ReservaService myReservaService = myRetro.create(ReservaService.class);
 
         myReservaService.postAll(r).enqueue(new Callback<Object>() {
@@ -62,5 +63,8 @@ public class AgendarActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private class RetroFit {
     }
 }

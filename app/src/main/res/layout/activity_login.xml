@@ -89,9 +89,10 @@
         android:layout_width="133dp"
         android:layout_height="48dp"
 
+        android:layout_marginBottom="16dp"
         android:background="@drawable/general_button"
-        android:fontFamily="@font/kaushan_script"
 
+        android:fontFamily="@font/kaushan_script"
         android:text="@string/ingresar"
         android:textAppearance="@android:style/TextAppearance.Material.Large"
         android:textColor="#0B0A0A"

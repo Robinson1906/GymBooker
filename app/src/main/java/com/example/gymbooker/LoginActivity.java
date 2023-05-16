@@ -50,10 +50,10 @@ public class LoginActivity extends AppCompatActivity{
         String loginUser=txtuser.getText().toString();
 
         if (helperToken.getTokenByToken(loginUser)!=null){
-            SharedPreferences.Editor editor= preferences.edit();
-            editor.putBoolean("logged",true);
-            editor.putString("user","user");
-            editor.apply();
+                SharedPreferences.Editor editor= preferences.edit();
+                editor.putBoolean("logged",true);
+                editor.putString("user","user");
+                editor.apply();
             Intent i = new Intent(this, MainActivity.class);
             startActivity(i);
             finish();
