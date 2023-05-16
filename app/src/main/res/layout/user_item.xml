@@ -3,39 +3,43 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ViewUser">
+    android:layout_height="70dp"
+    >
 
     <TextView
-        android:id="@+id/tvTokenUser"
+        android:id="@+id/txtTokenUser"
         android:layout_width="79dp"
         android:layout_height="29dp"
         android:layout_weight="1"
         android:text="Token"
-        app:layout_constraintEnd_toStartOf="@+id/tvTokenExpire"
-        app:layout_constraintStart_toEndOf="@+id/txNameOfUser"
-        tools:layout_editor_absoluteY="20dp" />
+        android:fontFamily="@font/kaushan_script"
+        app:layout_constraintEnd_toStartOf="@+id/txtTokenExpire"
+        app:layout_constraintStart_toEndOf="@+id/txtNameUser"
+        app:layout_constraintTop_toTopOf="@+id/txtNameUser" />
 
     <TextView
-        android:id="@+id/tvTokenExpire"
+        android:id="@+id/txtTokenExpire"
         android:layout_width="75dp"
         android:layout_height="28dp"
         android:layout_marginEnd="25dp"
         android:layout_weight="1"
         android:text="TokenExpire"
+        android:fontFamily="@font/kaushan_script"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvTokenUser"
-        tools:layout_editor_absoluteY="20dp" />
+        app:layout_constraintStart_toEndOf="@+id/txtTokenUser"
+        app:layout_constraintTop_toTopOf="@+id/txtTokenUser" />
 
     <TextView
-        android:id="@+id/txNameOfUser"
+        android:id="@+id/txtNameUser"
         android:layout_width="150dp"
         android:layout_height="29dp"
         android:layout_marginStart="25dp"
+        android:layout_marginTop="20dp"
         android:layout_weight="1"
         android:text="Name"
-        app:layout_constraintEnd_toStartOf="@+id/tvTokenUser"
+        android:fontFamily="@font/kaushan_script"
+        app:layout_constraintEnd_toStartOf="@+id/txtTokenUser"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="20dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

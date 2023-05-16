@@ -41,7 +41,7 @@ public class LoginActivity extends AppCompatActivity{
         if (PASS.equals(passUser)&&USER.equals(loginUser)){
             SharedPreferences.Editor editor= preferences.edit();
             editor.putBoolean("logged",true);
-            editor.putString("user","admin");
+            editor.putString("user","user");
             editor.apply();
             Intent i = new Intent(this, MainActivity.class);
             startActivity(i);
