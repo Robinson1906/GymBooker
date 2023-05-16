@@ -30,7 +30,7 @@
 
 
     <EditText
-        android:id="@+id/TxtHora2"
+        android:id="@+id/txthora2"
         android:layout_width="80dp"
         android:layout_height="55dp"
         android:ems="10"
@@ -63,7 +63,7 @@
         app:layout_constraintVertical_bias="0.395" />
 
     <EditText
-        android:id="@+id/TxtHora1"
+        android:id="@+id/txthora1"
         android:layout_width="80dp"
         android:layout_height="55dp"
         android:ems="10"
@@ -133,7 +133,7 @@
         app:layout_constraintVertical_bias="0.519" />
 
     <EditText
-        android:id="@+id/TxtFecha"
+        android:id="@+id/txtfecha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -167,7 +167,7 @@
         app:layout_constraintVertical_bias="0.139" />
 
     <EditText
-        android:id="@+id/txtRutina"
+        android:id="@+id/txtrutina"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"

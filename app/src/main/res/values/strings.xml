@@ -36,12 +36,13 @@
     <string name="HoraIngreso">Hora Ingreso:</string>
     <string name="Fecha">Fecha</string>
     <string name="FechaNacimiento">Fecha Nacimiento</string>
-    <string name="token">Token:</string>
+    <string name="Es_la_llave">Token:</string>
     <string name="ver_historial">Ver Historial</string>
     <string name="ver_reservas">Ver Reservas</string>
     <string name="ver_informacion">Ver Informacion</string>
     <string name="ingresar_token">Ingrese Token</string>
-    <string name="que_es_token">¿Que es Token?</string>
+    <string name="token1">¿Que es Token?</string>
     <string name="explicacion_token">token</string>
+    <string name="token">token</string>
 
 </resources>

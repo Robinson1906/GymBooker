@@ -18,8 +18,8 @@ import com.example.gymbooker.Helpers.HelperToken;
 public class LoginActivity extends AppCompatActivity{
 
 
-    private EditText txtUser;
-    private Button btnLogin;
+    private EditText txtuser;
+    private Button btnlogin;
     private SharedPreferences preferences;
 
 
@@ -29,7 +29,7 @@ public class LoginActivity extends AppCompatActivity{
 
         setContentView(R.layout.activity_login);
 
-        txtUser=findViewById(R.id.txtTokenLogin);
+        txtuser=findViewById(R.id.txtTokenLogin);
         preferences=getSharedPreferences("gym-booker",MODE_PRIVATE);
         if (preferences.getBoolean("logged",false)){
             Intent i=new Intent(this,MainActivity.class);
@@ -47,7 +47,7 @@ public class LoginActivity extends AppCompatActivity{
         HelperToken helperToken =new HelperToken();
 
 
-        String loginUser=txtUser.getText().toString();
+        String loginUser=txtuser.getText().toString();
 
         if (helperToken.getTokenByToken(loginUser)!=null){
             SharedPreferences.Editor editor= preferences.edit();

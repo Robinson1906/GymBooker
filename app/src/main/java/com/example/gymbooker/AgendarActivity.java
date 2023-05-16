@@ -4,10 +4,8 @@ package com.example.gymbooker;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-
-import android.widget.Button;
-
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -15,19 +13,16 @@ import com.example.gymbooker.Class.Reserva;
 import com.example.gymbooker.RetroFit.APIService;
 import com.example.gymbooker.RetroFit.ReservaService;
 
-import java.security.interfaces.RSAKey;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
 
 
 public class AgendarActivity extends AppCompatActivity {
     EditText date, horainicial, horafinal, area;
 
-    private EditText txtRutina,TxtHora1,TxtHora2,TxtFecha;
-    private Button Agendar;
+    private EditText txtrutina,txthora1,txthora2,txtfecha;
+    private Button agendar;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,10 +31,10 @@ public class AgendarActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_agendar);
 
-        txtRutina = findViewById(R.id.txtRutina);
-        TxtHora1 = findViewById(R.id.TxtHora1);
-        TxtHora2 = findViewById(R.id.TxtHora2);
-        TxtFecha = findViewById(R.id.TxtFecha);
+        txtrutina = findViewById(R.id.txtrutina);
+        txthora1 = findViewById(R.id.txthora1);
+        txthora1 = findViewById(R.id.txthora2);
+        txtfecha = findViewById(R.id.txtfecha);
 
 
     }
@@ -51,7 +46,7 @@ public class AgendarActivity extends AppCompatActivity {
         r.setRutina(area.getText().toString());
         r.setDuracion(r.getHoraSalida()-r.getHoraIngreso());
 
-        Retrofit myRetro = APIService.getInstance();
+        RetroFit myRetro = APIService.getInstance();
         ReservaService myReservaService = myRetro.create(ReservaService.class);
 
         myReservaService.postAll(r).enqueue(new Callback<Object>() {
