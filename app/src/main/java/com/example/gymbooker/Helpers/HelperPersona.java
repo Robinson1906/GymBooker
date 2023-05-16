@@ -2,23 +2,15 @@ package com.example.gymbooker.Helpers;
 
 
 import android.util.Log;
-import android.view.View;
-import android.widget.Toast;
-
-import com.example.gymbooker.AgendarActivity;
-import com.example.gymbooker.Class.Reserva;
 
 import com.example.gymbooker.Class.User;
 import com.example.gymbooker.RetroFit.APIService;
 import com.example.gymbooker.RetroFit.UserService;
 
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Locale;
+import java.util.HashMap;
 import java.util.Map;
 
-import okhttp3.Request;
-import okio.Timeout;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -27,25 +19,51 @@ import retrofit2.Retrofit;
 public class HelperPersona {
     private static final String API_Url =  "https://apex.oracle.com/pls/apex/gymbooker/RESTAPI_GYMBOOKER/";
 
-    public ArrayList<User> getUser(){
-        //todo traer los usuarios del api
-        /*Retrofit retrofit= APIService.getInstance();
+    ArrayList<User> users = new ArrayList<>();
 
-        UserService userService= retrofit.create(UserService.class);
+    public ArrayList<User> getUser() {
+        //todo traer los usuarios del api
+        Retrofit retrofit = APIService.getInstance();
+        UserService userService = retrofit.create(UserService.class);
         userService.getAll().enqueue(new Callback<Object>() {
+
             @Override
             public void onResponse(Call<Object> call, Response<Object> response) {
-                Log.d("myLog","Success");
+
+                HashMap<String, ArrayList<HashMap<String, Map>>> dictionary = (HashMap<String, ArrayList<HashMap<String, Map>>>) response.body();
+
+                // Iterating over the Dictionary (HashMap)
+                for (Map.Entry<String, ArrayList<HashMap<String, Map>>> entry : dictionary.entrySet()) {
+                    String key = entry.getKey();
+                    ArrayList<HashMap<String, Map>> arrayList = entry.getValue();
+
+                    // Iterating over the ArrayList
+                    for (HashMap<String, Map> item : arrayList) {
+                        // Iterating over each user
+                        for (Map.Entry<String, Map> itemEntry : item.entrySet()) {
+                            User u = new User();
+                            u.setCedula((String) itemEntry.getValue().get("cedula"));
+                            u.setTelefono((String) itemEntry.getValue().get("telefono"));
+                            u.setCorreo((String) itemEntry.getValue().get("correo"));
+                            u.setIsAdmin((int) itemEntry.getValue().get("isAdmin"));
+                            u.setFechaNacimiento((String) itemEntry.getValue().get("fecha_nacimiento"));
+                            u.setToken((String) itemEntry.getValue().get("thetoken"));
+
+                            users.add(u);
+                        }
+                    }
+                }
             }
+
 
             @Override
             public void onFailure(Call<Object> call, Throwable t) {
-                Log.d("myLog",t.toString());
+                Log.d("myLog", t.toString());
 
             }
-        });
-*/
-        ArrayList<User> users = new ArrayList<>();
+    });
+
+        /*ArrayList<User> users = new ArrayList<>();
         User u1 = new User("1097608514", "Emilton Fabian Hernandez Mejia", 1, "faherme46@gmail.com", "3166316579", "2005-04-25", "0001abc");
         User u2 = new User("1097608514","Emilton Fabian Hernandez Mejia",1,"faherme46@gmail.com","3166316578","2005-04-25","0002abc");
         User u3 = new User("1097608514","Emilton Fabian Hernandez Mejia",1,"faherme46@gmail.com","3166316577","2005-04-25","0003abc");
@@ -53,15 +71,14 @@ public class HelperPersona {
 
         users.add(u1);
         users.add(u2);
-        users.add(u3);
+        users.add(u3);*/
+
 
         return users;
     }
 
+
     public void guardarPersona(User u){
-
-
-
 
         //TODO Verificar el funcionamiento
 

@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.gymbooker.Class.Reserva;
+
 import com.example.gymbooker.Helpers.HelperReservas;
 import com.example.gymbooker.RetroFit.APIService;
 import com.example.gymbooker.RetroFit.ReservaService;
@@ -38,20 +39,25 @@ public class AgendarActivity extends AppCompatActivity {
         txthora1 = findViewById(R.id.txthora1);
         txthora1 = findViewById(R.id.txthora2);
         txtfecha = findViewById(R.id.txtfecha);
+        agendar = findViewById(R.id.btn_agendar);
 
 
     }
 
+
     public void guardar(View view) {
+
         Reserva r = new Reserva();
         r.setFecha(date.getText().toString());
         r.setHoraIngreso(horainicial.getText().toString());
         r.setHoraSalida(horafinal.getText().toString());
         r.setRutina(area.getText().toString());
+
         r.setDuracion("0");
 
         HelperReservas helperReservas = new HelperReservas();
         helperReservas.guardarReserva(r);
+
 
     }
 
