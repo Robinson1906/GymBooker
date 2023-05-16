@@ -11,6 +11,7 @@ import android.widget.Toast;
 import com.example.gymbooker.Adapters.ReservasAdapter;
 import com.example.gymbooker.Adapters.ReservasDiaAdapter;
 import com.example.gymbooker.Class.Reserva;
+import com.example.gymbooker.Helpers.HelperReservas;
 import com.example.gymbooker.R;
 
 import java.util.ArrayList;
@@ -25,9 +26,6 @@ public class ReservasDiaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reservas_dia);
         LoadData();
-
-
-
 
     }
 
@@ -69,14 +67,9 @@ public class ReservasDiaActivity extends AppCompatActivity {
 
     public void LoadData(){
         //TODO añadir conexion con base de datos
-        Reserva res1 = new Reserva("02/05/23","1097608514","Espalda",1600,1800);
-        Reserva res2 = new Reserva("08/05/23","1097608514","Abdomen",900,1100);
-        Reserva res3 = new Reserva("08/05/23","1097608514","Abdomen",900,1100);
+        HelperReservas helperReservas=new HelperReservas();
+        ListaReservas=helperReservas.getReservas();
 
-        ListaReservas = new ArrayList<>();
-        ListaReservas.add(res1);
-        ListaReservas.add(res2);
-        ListaReservas.add(res3);
     }
 
     public void selecData(){

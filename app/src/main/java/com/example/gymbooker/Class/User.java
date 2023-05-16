@@ -1,16 +1,17 @@
 package com.example.gymbooker.Class;
 
 import java.io.Serializable;
+import java.io.StringReader;
 
 public class User implements Serializable {
 
     private int isAdmin;
-    private long cedula;
+    private String cedula;
     private String nombre, correo, fechaNacimiento, token,telefono;
 
     public User() {}
 
-    public User(long cedula,String nombre,int isAdmin,  String correo, String telefono, String fechaNacimiento, String token) {
+    public User(String cedula,String nombre,int isAdmin,  String correo, String telefono, String fechaNacimiento, String token) {
         this.isAdmin = isAdmin;
         this.cedula = cedula;
         this.telefono = telefono;
@@ -28,11 +29,11 @@ public class User implements Serializable {
         this.isAdmin = isAdmin;
     }
 
-    public long getCedula() {
+    public String getCedula() {
         return cedula;
     }
 
-    public void setCedula(long cedula) {
+    public void setCedula(String cedula) {
         this.cedula = cedula;
     }
 

@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.gymbooker.Class.Reserva;
+import com.example.gymbooker.Class.User;
 import com.example.gymbooker.Helpers.HelperPersona;
 import com.example.gymbooker.R;
 
@@ -68,11 +69,16 @@ public class ReservasDiaAdapter extends RecyclerView.Adapter<ReservasDiaAdapter.
         }
 
         public void link(Reserva myres){
-            //TODO agregar acceso para ver el nombre proveniente de usuario
             HelperPersona helperPersona=new HelperPersona();
+            User u=helperPersona.getUserByCc(myres.getCedula());
+            if (u!=null){
+                nameUser.setText(myres.getFecha());
+            }else{
+                nameUser.setText("Nemo Nobody");
+            }
 
 
-            nameUser.setText(myres.getFecha());
+
             hInicio.setText(myres.getHoraIngreso());
 
 

@@ -59,6 +59,7 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/shape_azulito"
         android:fontFamily="@font/kaushan_script"
+        android:foreground="@drawable/ic_baseline_check_24"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
@@ -71,6 +72,7 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/shape_rojito"
         android:fontFamily="@font/kaushan_script"
+        android:foreground="@drawable/ic_baseline_close_24"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
