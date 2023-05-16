@@ -10,10 +10,10 @@ public class HelperToken {
     public void getTokens(){
         //todo traer tokens del api
         //temporal tokens
-        Tokens t1= new Tokens(01,"0001abc","25/04/2005","27/05/2007",1);
-        Tokens t2= new Tokens(01,"0002abc","25/04/2005","27/05/2007",1);
-        Tokens t3= new Tokens(01,"0003abc","25/04/2005","27/05/2007",1);
-        Tokens t4= new Tokens(01,"0004abc","25/04/2005","27/05/2007",1);
+        Tokens t1= new Tokens(01,"0001abc","2005-04-25","2007-05-27",1);
+        Tokens t2= new Tokens(01,"0002abc","2005-04-25","2007-05-27",1);
+        Tokens t3= new Tokens(01,"0003abc","2005-04-25","2007-05-27",1);
+        Tokens t4= new Tokens(01,"0004abc","2005-04-25","2007-05-27",1);
 
         listToken=new ArrayList<>();
         listToken.add(t1);

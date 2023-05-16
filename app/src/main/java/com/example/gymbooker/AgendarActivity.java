@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.gymbooker.Class.Reserva;
+import com.example.gymbooker.Helpers.HelperReservas;
 import com.example.gymbooker.RetroFit.APIService;
 import com.example.gymbooker.RetroFit.ReservaService;
 
@@ -22,8 +23,9 @@ import retrofit2.Retrofit;
 public class AgendarActivity extends AppCompatActivity {
     EditText date, horainicial, horafinal, area;
 
-    private EditText txtrutina,txthora1,txthora2,txtfecha;
+    private EditText txtrutina, txthora1, txthora2, txtfecha;
     private Button agendar;
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,32 +41,18 @@ public class AgendarActivity extends AppCompatActivity {
 
 
     }
-    public void guardar(View view){
+
+    public void guardar(View view) {
         Reserva r = new Reserva();
         r.setFecha(date.getText().toString());
-        r.setHoraIngreso(Integer.parseInt(horainicial.getText().toString()));
-        r.setHoraSalida(Integer.parseInt(horafinal.getText().toString()));
+        r.setHoraIngreso(horainicial.getText().toString());
+        r.setHoraSalida(horafinal.getText().toString());
         r.setRutina(area.getText().toString());
-        r.setDuracion(r.getHoraSalida()-r.getHoraIngreso());
+        r.setDuracion("0");
 
-        Retrofit myRetro = APIService.getInstance();
-        ReservaService myReservaService = myRetro.create(ReservaService.class);
-
-        myReservaService.postAll(r).enqueue(new Callback<Object>() {
-            @Override
-            public void onResponse(Call<Object> call, Response<Object> response) {
-                Toast.makeText(AgendarActivity.this, "nice", Toast.LENGTH_SHORT).show();
-
-            }
-
-            @Override
-            public void onFailure(Call<Object> call, Throwable t) {
-                Toast.makeText(AgendarActivity.this, "ñao ñao", Toast.LENGTH_SHORT).show();
-            }
-        });
+        HelperReservas helperReservas = new HelperReservas();
+        helperReservas.guardarReserva(r);
 
     }
 
-    private class RetroFit {
-    }
 }

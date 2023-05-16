@@ -53,6 +53,7 @@ public class ReservasDiaAdapter extends RecyclerView.Adapter<ReservasDiaAdapter.
 
     @Override
     public int getItemCount() {
+
         return listReserva.size();
     }
 

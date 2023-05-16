@@ -17,9 +17,9 @@ public class HelperReservas {
         //TODO traer reservas del api
         ArrayList<Reserva> listReserva= new ArrayList<>();
 
-        Reserva res1 = new Reserva("02/05/23","1097608514","Espalda",1600,1800);
-        Reserva res2 = new Reserva("08/05/23","1097608514","Abdomen",900,1100);
-        Reserva res3 = new Reserva("08/05/23","1097608514","Abdomen",900,1100);
+        Reserva res1 = new Reserva("2023-05-12","1097608514","Espalda","16:00","18:00");
+        Reserva res2 = new Reserva("2023-05-13","1097608514","Abdomen","09:00","11:00");
+        Reserva res3 = new Reserva("2023-05-16","1097608514","Abdomen","09:00","11:00");
 
 
         listReserva.add(res1);
