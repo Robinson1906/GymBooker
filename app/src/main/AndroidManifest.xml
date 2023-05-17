@@ -64,8 +64,6 @@
             android:name=".User.LoginActivity"
 
             android:exported="false">
-
-
         </activity>
         <activity
             android:name=".MainActivity"
