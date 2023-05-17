@@ -1,13 +1,17 @@
-package com.example.gymbooker.User;
+package com.example.gymbooker;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-import com.example.gymbooker.Tokens.HelperToken;
-import com.example.gymbooker.R;
-import com.example.gymbooker.Tokens.Tokens;
+import com.example.gymbooker.Class.Reserva;
+import com.example.gymbooker.Class.Tokens;
+import com.example.gymbooker.Class.User;
+import com.example.gymbooker.Helpers.HelperReservas;
+import com.example.gymbooker.Helpers.HelperToken;
+
+import java.util.ArrayList;
 
 public class UsuarioActivity extends AppCompatActivity {
     private User u;
@@ -35,7 +39,7 @@ public class UsuarioActivity extends AppCompatActivity {
         txtcc.setText(String.valueOf(u.getCedula()));
         txtfechanacimiento.setText(u.getFechaNacimiento());
         txttelefono.setText(u.getTelefono());
-        //txtTotalReservas.setText(u.getNombre());
+        txttotalreservas.setText(String.valueOf(setReservasTotales()));
 
         getToken();
         if (token!=null){
@@ -54,6 +58,21 @@ public class UsuarioActivity extends AppCompatActivity {
         token= helperToken.getTokenByToken(u.getToken());
     }
 
+    public int setReservasTotales(){
+        HelperReservas helperReservas =new HelperReservas();
+        ArrayList<Reserva> listReserva,listaFiltrada;
+        listaFiltrada=new ArrayList<>();
+        listReserva=helperReservas.getReserva();
+        for (Reserva r:
+             listReserva) {
+            if (u.getCedula().equals(r.getCedula())){
+                listaFiltrada.add(r);
+            }
+        }
 
-
+        return listReserva.size();
     }
+
+
+
+}
