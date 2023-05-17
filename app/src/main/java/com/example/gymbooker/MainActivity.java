@@ -3,13 +3,10 @@ package com.example.gymbooker;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
-
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.gymbooker.Reserva.AgendarActivity;
@@ -18,15 +15,9 @@ import com.example.gymbooker.Reserva.ReservasDiaActivity;
 import com.example.gymbooker.Tokens.HelperToken;
 import com.example.gymbooker.Tokens.Tokens;
 import com.example.gymbooker.User.UsersActivity;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class MainActivity extends AppCompatActivity {
@@ -110,7 +101,6 @@ public class MainActivity extends AppCompatActivity {
                     t.setfVencimiento(date.toString());
                 }
 
-                helperToken.postToken(t);
             }
         });
         config= findViewById(R.id.btnConfig);
@@ -138,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     private String generarToken(){
-        String banco = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890.:!";
+        String banco = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
 
 
         String cadena = "";
@@ -149,4 +139,5 @@ public class MainActivity extends AppCompatActivity {
        }
         return cadena;
     }
+
 }
