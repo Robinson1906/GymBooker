@@ -3,8 +3,10 @@ package com.example.gymbooker;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -14,9 +16,15 @@ import com.example.gymbooker.Reserva.ReservasDiaActivity;
 import com.example.gymbooker.Tokens.HelperToken;
 import com.example.gymbooker.Tokens.Tokens;
 import com.example.gymbooker.User.UsersActivity;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class MainActivity extends AppCompatActivity {
@@ -100,6 +108,28 @@ public class MainActivity extends AppCompatActivity {
                     t.setfVencimiento(date.toString());
                 }
 
+
+                FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+                Map<String, Object> user = new HashMap<>();
+                user.put("thetoken",t.getTheToken());
+                user.put("fCreacion",t.getfCreacion());
+                user.put("fVencimiento",t.getfVencimiento());
+
+                db.collection("users")
+                        .add(user)
+                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                            @Override
+                            public void onSuccess(DocumentReference documentReference) {
+                                Log.d("TAG", "DocumentSnapshot added with ID: " + documentReference.getId());
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Log.w("TAG", "Error adding document", e);
+                            }
+                        });
             }
         });
         config= findViewById(R.id.btnConfig);
