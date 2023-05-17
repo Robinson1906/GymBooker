@@ -5,11 +5,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-import com.example.gymbooker.Class.Reserva;
-import com.example.gymbooker.Class.Tokens;
-import com.example.gymbooker.Class.User;
-import com.example.gymbooker.Helpers.HelperReservas;
-import com.example.gymbooker.Helpers.HelperToken;
+import com.example.gymbooker.Reserva.HelperReservas;
+import com.example.gymbooker.Reserva.Reserva;
+import com.example.gymbooker.Tokens.HelperToken;
+import com.example.gymbooker.Tokens.Tokens;
+import com.example.gymbooker.User.User;
 
 import java.util.ArrayList;
 
