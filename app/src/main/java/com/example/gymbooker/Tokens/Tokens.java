@@ -49,7 +49,7 @@ public class Tokens implements Serializable {
         this.fCreacion = fCreacion;
     }
 
-    public int isLimited(int i) {
+    public int isLimited() {
         return isLimited;
     } public void setLimited(int limited) {
         isLimited = limited;

@@ -103,10 +103,10 @@ public class MainActivity extends AppCompatActivity {
                 boolean isUnlimited=true;
                 LocalDate date=null;
                 if (isUnlimited){
-                    t.isLimited(0);
+                    t.setLimited(0);
                     t.setfVencimiento("null");
                 }else {
-                    t.isLimited(1);
+                    t.setLimited(1);
                     t.setfVencimiento(date.toString());
                 }
 
