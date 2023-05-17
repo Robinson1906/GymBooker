@@ -110,28 +110,7 @@ public class MainActivity extends AppCompatActivity {
                     t.setfVencimiento(date.toString());
                 }
 
-
-                FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-                Map<String, Object> user = new HashMap<>();
-                user.put("thetoken",t.getTheToken());
-                user.put("fCreacion",t.getfCreacion());
-                user.put("fVencimiento",t.getfVencimiento());
-
-                db.collection("users")
-                        .add(user)
-                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                            @Override
-                            public void onSuccess(DocumentReference documentReference) {
-                                Log.d("TAG", "DocumentSnapshot added with ID: " + documentReference.getId());
-                            }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Log.w("TAG", "Error adding document", e);
-                            }
-                        });
+                helperToken.postToken(t);
             }
         });
         config= findViewById(R.id.btnConfig);

@@ -6,15 +6,15 @@ import java.io.StringReader;
 public class User implements Serializable {
 
     private int isAdmin;
-    private Long cedula,telefono;
-    private String nombre, apellido,correo, fechaNacimiento, token;
+    private String nombre, apellido, correo, fechaNacimiento, cedula, telefono,token;
 
-    public User() {}
+    public User() {
+    }
 
-    public User(int isAdmin, Long cedula, Long telefono, String nombre, String apellido, String correo, String fechaNacimiento, String token) {
+    public User(int isAdmin, String cedula, String nombre, String appelido, String telefono, String correo, String fechaNacimiento, String token) {
         this.isAdmin = isAdmin;
-        this.cedula = cedula;
         this.telefono = telefono;
+        this.cedula = cedula;
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
@@ -30,20 +30,12 @@ public class User implements Serializable {
         this.isAdmin = isAdmin;
     }
 
-    public Long getCedula() {
-        return cedula;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setCedula(Long cedula) {
-        this.cedula = cedula;
-    }
-
-    public Long getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(Long telefono) {
-        this.telefono = telefono;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getApellido() {
@@ -52,14 +44,6 @@ public class User implements Serializable {
 
     public void setApellido(String apellido) {
         this.apellido = apellido;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
     }
 
     public String getCorreo() {
@@ -76,6 +60,22 @@ public class User implements Serializable {
 
     public void setFechaNacimiento(String fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public String getCedula() {
+        return cedula;
+    }
+
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
     public String getToken() {

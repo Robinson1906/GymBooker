@@ -41,7 +41,7 @@ public class UsuarioActivity extends AppCompatActivity {
         txtname.setText(u.getNombre());
         txtcc.setText(String.valueOf(u.getCedula()));
         txtfechanacimiento.setText(u.getFechaNacimiento());
-        txttelefono.setText(u.getTelefono());
+        txttelefono.setText(u.getTelefono().toString());
         txttotalreservas.setText(String.valueOf(setReservasTotales()));
 
         getToken();
