@@ -22,7 +22,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class RegisterActivity extends AppCompatActivity {
     private SharedPreferences preferences;
 
-    private TextView txtnombre,txttelefono,txtcorreo,txtcedula,txtfnacimiento;
+    private TextView txtnombre,txttelefono,txtcorreo,txtcedula,txtfnacimiento,txtapellido;
     private Button btmcontinuar;
     @SuppressLint("MissingInflatedId")
     @Override
@@ -35,6 +35,7 @@ public class RegisterActivity extends AppCompatActivity {
         txtcorreo = findViewById(R.id.ed_correo);
         txtcedula = findViewById(R.id.ed_cedula);
         txtfnacimiento = findViewById(R.id.ed_nacimiento);
+        txtapellido = findViewById(R.id.ed_apellido);
         btmcontinuar = findViewById(R.id.btn_registrar);
     }
 
@@ -42,8 +43,15 @@ public class RegisterActivity extends AppCompatActivity {
         HelperPersona bInstance = new HelperPersona();
         User u = new User();
         u.setNombre(txtnombre.getText().toString());
+
         u.setTelefono(txttelefono.getText().toString());
         u.setCedula(txtcedula.getText().toString());
+
+        u.setApellido(txtapellido.getText().toString());
+        
+        u.setCorreo(txtcorreo.getText().toString());
+        
+
         u.setFechaNacimiento(txtfnacimiento.getText().toString());
         int response=bInstance.guardarPersona(u);
         FirebaseAuth auth = FirebaseAuth.getInstance();
@@ -71,7 +79,7 @@ public class RegisterActivity extends AppCompatActivity {
             preferences=getSharedPreferences("gym-booker",MODE_PRIVATE);
             SharedPreferences.Editor editor= preferences.edit();
             editor.putInt("logged",1);
-            editor.putString("ccUsuario",u.getCedula());
+            editor.putString("ccUsuario",u.getCedula().toString());
             editor.apply();
             Intent i=new Intent(RegisterActivity.this, MainActivity.class);
             startActivity(i);
