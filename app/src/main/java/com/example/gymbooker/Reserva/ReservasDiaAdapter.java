@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.gymbooker.R;
+import com.example.gymbooker.User.HelperPersona;
 import com.example.gymbooker.User.User;
 
 import java.util.ArrayList;
