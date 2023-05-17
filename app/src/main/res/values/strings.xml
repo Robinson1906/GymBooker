@@ -55,6 +55,8 @@
     <string name="token">Token</string>
     <string name="fExpiracion">Fecha de Expriracion</string>
     <string name="ilimtado">No vence</string>
+    <string name="sutokenes">Su Token es:</string>
+    <string name="tokent">Token</string>
 
 
 </resources>
