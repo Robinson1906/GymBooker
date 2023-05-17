@@ -1,20 +1,8 @@
-package com.example.gymbooker.Helpers;
+package com.example.gymbooker.Tokens;
 
-import android.media.session.MediaSession;
-import android.util.Log;
-
-import com.example.gymbooker.Class.Tokens;
-import com.example.gymbooker.RetroFit.APIService;
-import com.example.gymbooker.RetroFit.TokensService;
+import com.example.gymbooker.Tokens.Tokens;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
 
 public class HelperToken {
     ArrayList<Tokens> listToken = new ArrayList<>();

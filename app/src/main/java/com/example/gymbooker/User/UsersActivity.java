@@ -1,4 +1,4 @@
-package com.example.gymbooker.Recyclers;
+package com.example.gymbooker.User;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -9,19 +9,11 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.Toast;
 
-import com.example.gymbooker.Adapters.UsersAdapter;
-import com.example.gymbooker.Class.Reserva;
-import com.example.gymbooker.Class.User;
-import com.example.gymbooker.Helpers.HelperPersona;
 import com.example.gymbooker.MainActivity;
 import com.example.gymbooker.R;
-import com.example.gymbooker.UsuarioActivity;
+import com.example.gymbooker.Reserva.ReservasActivity;
 
-import java.lang.reflect.Array;
-import java.lang.reflect.Parameter;
 import java.util.ArrayList;
 
 public class UsersActivity extends AppCompatActivity {
@@ -82,7 +74,7 @@ public class UsersActivity extends AppCompatActivity {
         back.setOnClickListener(new ImageButton.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent backing = new Intent(getApplicationContext(),MainActivity.class);
+                Intent backing = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(backing);
             }
         });

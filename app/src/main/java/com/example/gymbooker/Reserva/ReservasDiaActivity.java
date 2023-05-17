@@ -1,7 +1,6 @@
-package com.example.gymbooker.Recyclers;
+package com.example.gymbooker.Reserva;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,15 +8,10 @@ import android.support.v7.widget.RecyclerView;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.gymbooker.Adapters.ReservasDiaAdapter;
-import com.example.gymbooker.Class.Reserva;
-import com.example.gymbooker.Helpers.HelperFecha;
-import com.example.gymbooker.Helpers.HelperReservas;
+import com.example.gymbooker.HelperFecha;
 import com.example.gymbooker.R;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
+import java.util.ArrayList;
 
 
 public class ReservasDiaActivity extends AppCompatActivity {

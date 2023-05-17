@@ -1,16 +1,12 @@
-package com.example.gymbooker.Adapters;
+package com.example.gymbooker.User;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.gymbooker.Class.User;
 import com.example.gymbooker.R;
 
 import java.util.ArrayList;
@@ -65,8 +61,6 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.ViewHolder> 
             nombre= itemView.findViewById(R.id.txtNameUser);
             token=itemView.findViewById(R.id.txtTokenUser);
             fecha=itemView.findViewById(R.id.txtTokenExpire);
-
-
         }
         public void enlazar(User u){
             nombre.setText(u.getNombre());

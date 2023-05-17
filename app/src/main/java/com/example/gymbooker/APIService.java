@@ -1,4 +1,4 @@
-package com.example.gymbooker.RetroFit;
+package com.example.gymbooker;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

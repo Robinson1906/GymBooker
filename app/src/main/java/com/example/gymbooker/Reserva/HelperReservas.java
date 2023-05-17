@@ -1,18 +1,8 @@
-package com.example.gymbooker.Helpers;
+package com.example.gymbooker.Reserva;
 
-import android.util.Log;
-import android.widget.Toast;
-
-import com.example.gymbooker.AgendarActivity;
-import com.example.gymbooker.Class.Reserva;
-import com.example.gymbooker.Class.Reserva;
-import com.example.gymbooker.RetroFit.APIService;
-import com.example.gymbooker.RetroFit.ReservaService;
-import com.example.gymbooker.RetroFit.ReservaService;
+import com.example.gymbooker.APIService;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;

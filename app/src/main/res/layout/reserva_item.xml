@@ -5,7 +5,7 @@
     android:id="@+id/cltItemReserva"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".Class.Reserva">
+    tools:context=".Reserva.Reserva">
 
     <TextView
         android:id="@+id/tv_fecha_title"

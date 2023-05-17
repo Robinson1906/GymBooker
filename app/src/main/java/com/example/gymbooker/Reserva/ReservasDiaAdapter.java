@@ -1,4 +1,4 @@
-package com.example.gymbooker.Adapters;
+package com.example.gymbooker.Reserva;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -8,10 +8,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.gymbooker.Class.Reserva;
-import com.example.gymbooker.Class.User;
-import com.example.gymbooker.Helpers.HelperPersona;
 import com.example.gymbooker.R;
+import com.example.gymbooker.User.HelperPersona;
+import com.example.gymbooker.User.User;
 
 import java.util.ArrayList;
 

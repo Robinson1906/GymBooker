@@ -1,7 +1,6 @@
-package com.example.gymbooker.RetroFit;
+package com.example.gymbooker.Tokens;
 
-import com.example.gymbooker.Class.Reserva;
-import com.example.gymbooker.Class.Tokens;
+import com.example.gymbooker.Tokens.Tokens;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
