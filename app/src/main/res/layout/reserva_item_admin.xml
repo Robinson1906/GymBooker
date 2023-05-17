@@ -27,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
-        android:fontFamily="@font/andika"
+        android:fontFamily="@font/kaushan_script"
         android:text="@string/hh"
         android:textAlignment="center"
         android:textColor="@color/gray"
