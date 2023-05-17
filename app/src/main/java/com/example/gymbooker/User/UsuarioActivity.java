@@ -1,13 +1,11 @@
-package com.example.gymbooker.User;
+package com.example.gymbooker;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
-
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.gymbooker.R;
 import com.example.gymbooker.Reserva.HelperReservas;
 import com.example.gymbooker.Reserva.Reserva;
 import com.example.gymbooker.Tokens.HelperToken;

@@ -43,7 +43,10 @@ public class RegisterActivity extends AppCompatActivity {
         u.setCorreo(txtcorreo.getText().toString());
         u.setCedula(txtcedula.getText().toString());
         u.setFechaNacimiento(txtfnacimiento.getText().toString());
-        int response=bInstance.guardarPersona(u);
+        bInstance.postUser(u);
+
+        int response = 0;       //Desvinculé que postUser fuese de return int, para poder subirlo al firestore
+
         if(response==200){
             Toast.makeText(this, "Registro Exitoso", Toast.LENGTH_SHORT).show();
             preferences=getSharedPreferences("gym-booker",MODE_PRIVATE);

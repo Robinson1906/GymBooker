@@ -1,7 +1,6 @@
 package com.example.gymbooker.User;
 
 import java.io.Serializable;
-import java.io.StringReader;
 
 public class User implements Serializable {
 
@@ -38,7 +37,7 @@ public class User implements Serializable {
         this.cedula = cedula;
     }
 
-    public Long getTelefono() {
+    public int getTelefono() {
         return telefono;
     }
 
