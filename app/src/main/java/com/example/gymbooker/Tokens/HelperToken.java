@@ -1,6 +1,7 @@
 package com.example.gymbooker.Tokens;
 
 import com.example.gymbooker.Tokens.Tokens;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 
@@ -46,6 +47,10 @@ public class HelperToken {
             }
         });
         return Tokens;*/
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+
         listToken=new ArrayList<>();
         Tokens t1=new Tokens(1,"abc1","2023-05-16","2023-01-12",1,false);
         Tokens t2=new Tokens(1,"abc2","2023-05-16","2023-01-12",1,false);
