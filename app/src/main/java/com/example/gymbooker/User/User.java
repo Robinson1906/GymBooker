@@ -1,21 +1,21 @@
 package com.example.gymbooker.User;
 
 import java.io.Serializable;
-import java.io.StringReader;
 
 public class User implements Serializable {
 
     private int isAdmin;
-    private String cedula;
-    private String nombre, correo, fechaNacimiento, token,telefono;
+    private Long cedula,telefono;
+    private String nombre, apellido,correo, fechaNacimiento, token;
 
     public User() {}
 
-    public User(String cedula,String nombre,int isAdmin,  String correo, String telefono, String fechaNacimiento, String token) {
+    public User(int isAdmin, Long cedula, Long telefono, String nombre, String apellido, String correo, String fechaNacimiento, String token) {
         this.isAdmin = isAdmin;
         this.cedula = cedula;
         this.telefono = telefono;
         this.nombre = nombre;
+        this.apellido = apellido;
         this.correo = correo;
         this.fechaNacimiento = fechaNacimiento;
         this.token = token;
@@ -29,20 +29,28 @@ public class User implements Serializable {
         this.isAdmin = isAdmin;
     }
 
-    public String getCedula() {
+    public Long getCedula() {
         return cedula;
     }
 
-    public void setCedula(String cedula) {
+    public void setCedula(Long cedula) {
         this.cedula = cedula;
     }
 
-    public String getTelefono() {
+    public int getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(String telefono) {
+    public void setTelefono(Long telefono) {
         this.telefono = telefono;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
     public String getNombre() {
