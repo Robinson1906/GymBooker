@@ -127,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     private String generarToken(){
-        String banco = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+        String banco = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890.:!";
 
 
         String cadena = "";

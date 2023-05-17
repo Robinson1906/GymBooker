@@ -13,6 +13,7 @@ import android.widget.ImageButton;
 import com.example.gymbooker.MainActivity;
 import com.example.gymbooker.R;
 import com.example.gymbooker.Reserva.ReservasActivity;
+import com.example.gymbooker.UsuarioActivity;
 
 import java.util.ArrayList;
 
