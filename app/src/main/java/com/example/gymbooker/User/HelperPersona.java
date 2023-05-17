@@ -50,7 +50,7 @@ public class HelperPersona {
         user.put("correo",u.getCorreo());
         user.put("fNacimiento",u.getFechaNacimiento());
 
-        db.collection("tokens")
+        db.collection("persona")
                 .add(user)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override

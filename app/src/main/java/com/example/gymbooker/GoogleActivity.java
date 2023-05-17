@@ -13,6 +13,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class GoogleActivity extends AppCompatActivity {
+    private String xd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
