@@ -1,20 +1,8 @@
-package com.example.gymbooker.Helpers;
+package com.example.gymbooker.Tokens;
 
-import android.media.session.MediaSession;
-import android.util.Log;
-
-import com.example.gymbooker.Class.Tokens;
-import com.example.gymbooker.RetroFit.APIService;
-import com.example.gymbooker.RetroFit.TokensService;
+import com.example.gymbooker.Tokens.Tokens;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
 
 public class HelperToken {
     ArrayList<Tokens> listToken = new ArrayList<>();
@@ -59,10 +47,10 @@ public class HelperToken {
         });
         return Tokens;*/
         listToken=new ArrayList<>();
-        Tokens t1=new Tokens(1,"abc1","2023-05-16","2023-01-12",1);
-        Tokens t2=new Tokens(1,"abc2","2023-05-16","2023-01-12",1);
-        Tokens t3=new Tokens(1,"abc3","2023-05-16","2023-01-12",1);
-        Tokens t4=new Tokens(1,"abc4","2023-05-16","2023-01-12",1);
+        Tokens t1=new Tokens(1,"abc1","2023-05-16","2023-01-12",1,false);
+        Tokens t2=new Tokens(1,"abc2","2023-05-16","2023-01-12",1,false);
+        Tokens t3=new Tokens(1,"abc3","2023-05-16","2023-01-12",1,false);
+        Tokens t4=new Tokens(1,"abc4","2023-05-16","2023-01-12",1,false);
         listToken.add(t1);
         listToken.add(t2);
         listToken.add(t3);

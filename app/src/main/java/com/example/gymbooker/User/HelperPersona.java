@@ -1,11 +1,9 @@
-package com.example.gymbooker.Helpers;
+package com.example.gymbooker.User;
 
 
 import android.util.Log;
 
-import com.example.gymbooker.Class.User;
-import com.example.gymbooker.RetroFit.APIService;
-import com.example.gymbooker.RetroFit.UserService;
+import com.example.gymbooker.APIService;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,18 +1,15 @@
-package com.example.gymbooker.Helpers;
+package com.example.gymbooker;
 
 import android.os.Build;
 
-import com.example.gymbooker.Class.Reserva;
+import com.example.gymbooker.Reserva.Reserva;
 
-import java.text.DateFormat;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
-import java.util.Locale;
 
 public class HelperFecha {
 
