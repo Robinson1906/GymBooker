@@ -1,19 +1,19 @@
 package com.example.gymbooker.User;
 
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageButton;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.gymbooker.MainActivity;
 import com.example.gymbooker.R;
 import com.example.gymbooker.Reserva.ReservasActivity;
-import com.example.gymbooker.UsuarioActivity;
 
 import java.util.ArrayList;
 
