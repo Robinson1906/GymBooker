@@ -45,10 +45,12 @@ public class AgendarActivity extends AppCompatActivity {
         r.setHoraSalida(horafinal.getText().toString());
         r.setRutina(area.getText().toString());
 
+
+
         r.setDuracion("0");
 
         HelperReservas helperReservas = new HelperReservas();
-        helperReservas.guardarReserva(r);
+        helperReservas.postReserva(r);
 
 
     }
