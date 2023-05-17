@@ -22,15 +22,15 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".UsuarioActivity"
-            android:exported="false">
+            android:name=".User.UsuarioActivity"
+            android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".User.UsersActivity"
-            android:exported="false">
+            android:exported="true">
 
             <meta-data
                 android:name="android.app.lib_name"
@@ -45,7 +45,7 @@
         </activity>
         <activity
             android:name=".Reserva.AgendarActivity"
-            android:exported="false">
+            android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
