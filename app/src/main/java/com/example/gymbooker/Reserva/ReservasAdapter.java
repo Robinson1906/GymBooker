@@ -1,4 +1,4 @@
-package com.example.gymbooker.Adapters;
+package com.example.gymbooker.Reserva;
 
 
 import android.support.annotation.NonNull;
@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.gymbooker.R;
-import com.example.gymbooker.Class.Reserva;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package com.example.gymbooker;
+package com.example.gymbooker.User;
 
 
 import android.content.DialogInterface;
@@ -13,7 +13,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.gymbooker.Helpers.HelperToken;
+import com.example.gymbooker.MainActivity;
+import com.example.gymbooker.R;
+import com.example.gymbooker.Tokens.HelperToken;
 
 public class LoginActivity extends AppCompatActivity{
 
@@ -34,7 +36,7 @@ public class LoginActivity extends AppCompatActivity{
         preferences=getSharedPreferences("gym-booker",MODE_PRIVATE);
         int x=preferences.getInt("logged",0);
         if (x==1){
-            Intent i=new Intent(this,MainActivity.class);
+            Intent i=new Intent(this, MainActivity.class);
             startActivity(i);
             finish();
         }

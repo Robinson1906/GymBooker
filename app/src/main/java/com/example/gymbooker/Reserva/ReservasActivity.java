@@ -1,4 +1,4 @@
-package com.example.gymbooker.Recyclers;
+package com.example.gymbooker.Reserva;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -6,27 +6,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.gymbooker.Adapters.ReservasAdapter;
-import com.example.gymbooker.Class.Reserva;
-import com.example.gymbooker.Helpers.HelperFecha;
-import com.example.gymbooker.Helpers.HelperReservas;
+import com.example.gymbooker.HelperFecha;
 import com.example.gymbooker.R;
-import com.example.gymbooker.RetroFit.APIService;
-import com.example.gymbooker.RetroFit.ReservaService;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
 
 public class ReservasActivity extends AppCompatActivity {
 

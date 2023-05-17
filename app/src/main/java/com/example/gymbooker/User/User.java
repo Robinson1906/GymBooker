@@ -1,4 +1,4 @@
-package com.example.gymbooker.Class;
+package com.example.gymbooker.User;
 
 import java.io.Serializable;
 import java.io.StringReader;

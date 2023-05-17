@@ -1,4 +1,4 @@
-package com.example.gymbooker;
+package com.example.gymbooker.User;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -10,10 +10,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.gymbooker.Class.Reserva;
-import com.example.gymbooker.Class.Tokens;
-import com.example.gymbooker.Class.User;
-import com.example.gymbooker.Helpers.HelperPersona;
+import com.example.gymbooker.MainActivity;
+import com.example.gymbooker.R;
 
 public class RegisterActivity extends AppCompatActivity {
     private SharedPreferences preferences;
@@ -51,12 +49,12 @@ public class RegisterActivity extends AppCompatActivity {
             editor.putInt("logged",1);
             editor.putString("ccUsuario",u.getCedula());
             editor.apply();
-            Intent i=new Intent(RegisterActivity.this,MainActivity.class);
+            Intent i=new Intent(RegisterActivity.this, MainActivity.class);
             startActivity(i);
 
         }else if(response==201){
             Toast.makeText(this, "Error al Conectar", Toast.LENGTH_SHORT).show();
-            Intent i=new Intent(RegisterActivity.this,LoginActivity.class);
+            Intent i=new Intent(RegisterActivity.this, LoginActivity.class);
             startActivity(i);
         }else {
             Toast.makeText(this, "No carga", Toast.LENGTH_SHORT).show();

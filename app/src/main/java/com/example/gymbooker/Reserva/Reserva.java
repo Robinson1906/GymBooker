@@ -1,6 +1,6 @@
-package com.example.gymbooker.Class;
+package com.example.gymbooker.Reserva;
 
-import com.example.gymbooker.Helpers.HelperFecha;
+import com.example.gymbooker.HelperFecha;
 
 import java.io.Serializable;
 

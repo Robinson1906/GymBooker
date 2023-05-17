@@ -5,17 +5,15 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.gymbooker.Class.Tokens;
-import com.example.gymbooker.Helpers.HelperFecha;
-import com.example.gymbooker.Helpers.HelperToken;
-import com.example.gymbooker.Recyclers.ReservasActivity;
-
-import com.example.gymbooker.Recyclers.ReservasDiaActivity;
-import com.example.gymbooker.Recyclers.UsersActivity;
+import com.example.gymbooker.Reserva.AgendarActivity;
+import com.example.gymbooker.Reserva.ReservasActivity;
+import com.example.gymbooker.Reserva.ReservasDiaActivity;
+import com.example.gymbooker.Tokens.HelperToken;
+import com.example.gymbooker.Tokens.Tokens;
+import com.example.gymbooker.User.UsersActivity;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -52,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         agendar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i=new Intent(MainActivity.this,AgendarActivity.class);
+                Intent i=new Intent(MainActivity.this, AgendarActivity.class);
                 startActivity(i);
             }
         });

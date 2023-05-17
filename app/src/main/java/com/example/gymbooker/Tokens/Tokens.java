@@ -1,4 +1,4 @@
-package com.example.gymbooker.Class;
+package com.example.gymbooker.Tokens;
 
 import java.io.Serializable;
 

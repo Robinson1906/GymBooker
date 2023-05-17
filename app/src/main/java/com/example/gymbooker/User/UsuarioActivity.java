@@ -1,13 +1,13 @@
-package com.example.gymbooker;
+package com.example.gymbooker.User;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-import com.example.gymbooker.Class.Tokens;
-import com.example.gymbooker.Class.User;
-import com.example.gymbooker.Helpers.HelperToken;
+import com.example.gymbooker.Tokens.HelperToken;
+import com.example.gymbooker.R;
+import com.example.gymbooker.Tokens.Tokens;
 
 public class UsuarioActivity extends AppCompatActivity {
     private User u;
