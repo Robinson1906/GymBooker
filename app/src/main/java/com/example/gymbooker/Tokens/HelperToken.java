@@ -72,6 +72,8 @@ public class HelperToken {
         token.put("thetoken",t.getTheToken());
         token.put("fCreacion",t.getfCreacion());
         token.put("fVencimiento",t.getfVencimiento());
+        token.put("isLimited",t.isLimited());
+        token.put("fVencimiento",t.getfVencimiento());
 
         db.collection("tokens")
                 .add(token)
