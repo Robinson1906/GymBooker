@@ -47,17 +47,19 @@ public class LoginActivity extends AppCompatActivity {
     public  void clickIniciar( View view){
 
         HelperToken helperToken =new HelperToken();
-
-
         String loginUser=txtuser.getText().toString();
 
         if (helperToken.getTokenByToken(loginUser)!=null){
+            if (helperToken.getTokenByToken(loginUser).isUsed()==false){
                 SharedPreferences.Editor editor= preferences.edit();
                 editor.putString("user","user");
                 editor.apply();
-            Intent i = new Intent(this, RegisterActivity.class);
-            startActivity(i);
-            finish();
+                Intent i = new Intent(this, RegisterActivity.class);
+                startActivity(i);
+                finish();
+            } else {
+                Toast.makeText(this, "Token ya implementado", Toast.LENGTH_SHORT).show();
+            }
         }else {
             Toast.makeText(this, "Token Invalido", Toast.LENGTH_SHORT).show();
             onRestart();
